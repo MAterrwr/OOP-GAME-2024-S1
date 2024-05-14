@@ -2,18 +2,17 @@
 #define ENTITY_H
 
 class Entity{
-    protected:
-    int health;
-    int attack;
-    int defense;
     public:
+    int health;
+    int damage;
+    int defense;
     Entity();
-    Entity(int health, int attack, int defense);
+    Entity(int health, int damage, int defense);
     int getHealth();
-    int getAttack();
+    int getDamage();
     int getDefense();
     void setHealth(int health);
-    void setAttack(int attack);
+    void setDamage(int damage);
     void setDefense(int defense);
 };
 #endif 

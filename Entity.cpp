@@ -3,13 +3,13 @@
 
 Entity::Entity(){
     health = 0;
-    attack = 0;
+    damage = 0;
     defense = 0;
 }
 
-Entity::Entity(int health, int attack, int defense){
+Entity::Entity(int health, int damage, int defense){
     this->health = health;
-    this->attack = attack;
+    this->damage = damage;
     this->defense = defense;
 }
 
@@ -17,8 +17,8 @@ int Entity::getHealth(){
     return health;
 }
 
-int Entity::getAttack(){
-    return attack;
+int Entity::getDamage(){
+    return damage;
 }
 
 int Entity::getDefense(){
@@ -29,8 +29,8 @@ void Entity::setHealth(int health){
     this->health = health;
 }
 
-void Entity::setAttack(int attack){
-    this->attack = attack;
+void Entity::setDamage(int damage){
+    this->damage = damage;
 }
 
 void Entity::setDefense(int defense){

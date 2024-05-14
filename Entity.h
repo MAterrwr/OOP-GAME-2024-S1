@@ -2,11 +2,11 @@
 #define ENTITY_H
 
 class Entity{
-    protected:
+protected:
     int health;
     int attack;
     int defense;
-    public:
+public:
     Entity();
     Entity(int health, int attack, int defense);
     int getHealth();

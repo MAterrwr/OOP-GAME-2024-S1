@@ -15,5 +15,9 @@ Knight::Knight(int health, int damage, int defense, int skill) {
     this->defense = defense;
 }
 
+int Knight::specialKnightAttack() {
+    return damage * 2 ;
+}
+
 
 

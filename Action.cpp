@@ -46,19 +46,11 @@ void Action::askUserAction() {
             // Code to perform defend action
             break;
         case 3:
-<<<<<<< Updated upstream
-            std::cout << "You chose to check your inventory.\n";
+            cout << "You chose to check your inventory.\n";
             // Code to perform inventory action
             knight.setInventorySize(1); // set the inventory size to 1
             knight.getInventorySize();
             break;
-=======
-        cout << "You chose to check your inventory.\n";
-        // Code to perform inventory action
-        knight.setInventorySize(1); // set the inventory size to 1
-        knight.getInventorySize();
-        break;
->>>>>>> Stashed changes
         case 4:
             cout << "You chose to use your special ability.\n";
             // Code to perform special ability action

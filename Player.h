@@ -11,6 +11,20 @@ class Player : public Entity{
     Player(int health, int damage, int defense, int inventorySize, int skill);
     int getInventorySize();
     void setInventorySize(int inventorySize);
+class Player : public Entity {
+public:
+    int* inventory;
+    int inventorySize; 
+    int skill;
+
+    Player();
+    Player(int health, int damage, int defense, int inventorySize, int skill);
+    void takeDamage(int Damage); //unfinished
+    bool isAlive();
+
+    int getInventorySize();
+    void setInventorySize(int inventorySize);
+
     int getSkill();
     void setSkill(int skill);
 };

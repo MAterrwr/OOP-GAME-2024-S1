@@ -2,12 +2,15 @@
 #define MONSTER_H
 #include "Entity.h"
 
-class Monster : public Entity{
-    protected:
+class Monster : public Entity {
+protected:
     int level;
-    public:
+public:
     Monster();
     Monster(int health, int damage, int defense, int level);
+    void takeDamage(int Damage)
+    bool isAlive();
+
     int getLevel();
     void setLevel(int level);
 };

@@ -9,7 +9,7 @@ Knight::Knight() {
     defense = 5;
 }
 
-Knight::Knight(int health, int damage, int defense, int skill){
+Knight::Knight(int health, int damage, int defense, int skill) {
     this->health = health;
     this->damage = damage;
     this->defense = defense;

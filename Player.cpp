@@ -26,10 +26,33 @@ int Player::getInventorySize() {
 
 
 int Player::getSkill(){
+
+void Player::takeDamage(int Damage) {
+    int actualDamage = Damage - defense;
+    
+    if (actualDamage < 0) {
+        actualDamage = 0;
+    }
+    health -= actualDamage;
+
+    if (health < 0) {
+        health = 0;
+    }
+}
+
+bool Player::isAlive() {
+    if (health() > 0) {
+        return true;
+    } else {
+        return false;
+    }
+} 
+
+int Player::getSkill() {
     return skill;
 }
 
-void Player::setSkill(int skill){
+void Player::setSkill(int skill) {
     this->skill = skill;
 }
 

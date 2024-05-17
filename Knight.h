@@ -6,7 +6,6 @@ class Knight : public Player {
 public:
     Knight();
     Knight(int health, int damage, int defense, int skill);
-    
     void attack();
 };
 #endif

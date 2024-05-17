@@ -8,7 +8,7 @@ protected:
 public:
     Monster();
     Monster(int health, int damage, int defense, int level);
-    void takeDamage(int Damage)
+    void takeDamage(int Damage);
     bool isAlive();
 
     int getLevel();

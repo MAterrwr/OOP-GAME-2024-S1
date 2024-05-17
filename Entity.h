@@ -2,7 +2,7 @@
 #define ENTITY_H
 
 class Entity{
-private:
+protected:
     int health;
     int damage;
     int defense;

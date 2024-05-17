@@ -4,11 +4,6 @@
 #include <iostream>
 #include "Entity.h"
 
-#include <string>
-
-// Action.h
-#include <iostream>
-
 class Action {
 private:
     int userAction; // variable to store user action

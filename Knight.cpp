@@ -3,7 +3,7 @@
 #include "Player.h"
 #include "Knight.h"
 
-Knight::Knight() {
+Knight::Knight(){
     health = 100;
     damage = 10;
     defense = 5;

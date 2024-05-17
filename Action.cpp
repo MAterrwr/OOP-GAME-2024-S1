@@ -9,7 +9,7 @@ using namespace std;
 
 Action::Action() : userAction(0) {} // initialize userAction to 0 in the constructor
 
-void Action::askUserAction() {
+void Action::askUserAction(Player& player, Monster& monster) {
     cout << "Enter the action you want to do:\n";
     cout << "1 for attack\n";
     cout << "2 for defend\n";
@@ -17,26 +17,15 @@ void Action::askUserAction() {
     cout << "4 for special ability\n";
     cin >> userAction;
 
-    Knight knight;
-    Goblin goblin;
-
     if (userAction == 1 || userAction == 2 || userAction == 3 || userAction == 4) {
-        knight.getDamage();
-        knight.getHealth();
-        knight.getDefense();
-        knight.getInventorySize();
-        goblin.getDamage();
-        goblin.getHealth();
-        goblin.getDefense();
-
         switch (userAction)
         {
         case 1:
             cout << "You chose to attack.\n";
            
-            if (knight.getHealth() > 0) {
-                goblin.setHealth(goblin.getHealth() - (knight.getDamage() - goblin.getDefense()));
-                knight.setHealth(knight.getHealth() - goblin.getDamage());
+            if (player.getHealth() > 0) {
+                monster.setHealth(monster.getHealth() - (player.getDamage() - monster.getDefense()));
+                player.setHealth(player.getHealth() - monster.getDamage());
             } else {
                 cout << "You have been defeated.\n";
             }
@@ -48,8 +37,8 @@ void Action::askUserAction() {
         case 3:
             cout << "You chose to check your inventory.\n";
             // Code to perform inventory action
-            knight.setInventorySize(1); // set the inventory size to 1
-            knight.getInventorySize();
+            player.setInventorySize(1); // set the inventory size to 1
+            player.getInventorySize();
             break;
         case 4:
             cout << "You chose to use your special ability.\n";

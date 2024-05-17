@@ -3,12 +3,14 @@
 #include <string>
 #include <iostream>
 #include "Entity.h"
+#include "Player.h"
+#include "Monster.h"
 
 class Action {
 private:
     int userAction; // variable to store user action 
 public: 
     Action(); // constructor
-    void askUserAction(); // function to ask user action
+    void askUserAction(Player& player, Monster& monster); // function to ask user action
 };
 #endif

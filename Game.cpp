@@ -3,9 +3,9 @@
 using namespace std;
 
 void Game::play(Player& player, Monster& monster) {
-    while (player.isAlive() && enemy.isAlive()) {
+    while (player.isAlive() && monster.isAlive()) {
         //Player's turn
-        if (!enemy.isAlive()) {
+        if (!monster.isAlive()) {
             break;
         }
         int damage = monster.getDamage();

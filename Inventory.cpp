@@ -37,6 +37,20 @@ void Inventory::use_item(string& item_name) {
     cout << "Item " << item_name << " not found!" << endl;
 }
 
-void Inventory::print_inventory() {
-    cout <<
+void Inventory::print_inventory()  {
+    cout << "Inventory:" << std::endl;
+    for (int i = 0; i < item_count; ++i) {
+        cout << item_names[i] << ": " << item_quantities[i] << endl;
+    }
+    if (!trophy.empty()) {
+        cout << "Trophy: " << trophy << endl;
+    }
+}
+
+void Inventory::set_trophy( string& trophy_name) {
+    trophy = trophy_name;
+}
+
+string Inventory::get_trophy()  {
+    return trophy;
 }

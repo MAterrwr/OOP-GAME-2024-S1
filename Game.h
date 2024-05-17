@@ -7,7 +7,7 @@
 
 class Game {
 public:
-    void play(Player& player, Character& enemy);
+    void play(Player& player, Monster& enemy);
 };
 
 #endif

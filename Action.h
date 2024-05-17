@@ -6,12 +6,9 @@
 
 class Action {
 private:
-    int userAction; // variable to store user action
-    
+    int userAction; // variable to store user action 
 public: 
     Action(); // constructor
     void askUserAction(); // function to ask user action
-
-
 };
 #endif

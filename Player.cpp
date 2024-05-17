@@ -24,11 +24,6 @@ int Player::getInventorySize() {
     return inventorySize;
 }
 
-
-int Player::getSkill(){
-    return skill;
-}
-
 void Player::takeDamage(int Damage) {
     int actualDamage = Damage - defense;
     

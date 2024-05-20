@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//default constructor
 Inventory::Inventory() : max_items(10), item_count(0), trophy("") {
     item_names = new string[max_items]; //allocate memory for item names
     item_quantities = new int[max_items]; //allocate memory for item quantities
@@ -17,11 +18,13 @@ Inventory::Inventory() : max_items(10), item_count(0), trophy("") {
     item_count++;
 }
 
+//default destructor
 Inventory::~Inventory() {
     delete[] item_names;
     delete[] item_quantities;
 }
 
+//uses an item from the inventory
 void Inventory::use_item(string& item_name) {
     //finds the item in the inventory
     for (int i = 0; i < item_count; ++i) {
@@ -48,6 +51,7 @@ void Inventory::use_item(string& item_name) {
     cout << "Item " << item_name << " not found!" << endl;
 }
 
+//prints the current inventory
 void Inventory::print_inventory() {
     cout << "Inventory:" << endl;
     for (int i = 0; i < item_count; ++i) {
@@ -58,10 +62,12 @@ void Inventory::print_inventory() {
     }
 }
 
+//sets the trophy name
 void Inventory::set_trophy(string& trophy_name) {
     trophy = trophy_name;
 }
 
+//gets the trophy name
 string Inventory::get_trophy() {
     return trophy;
 }

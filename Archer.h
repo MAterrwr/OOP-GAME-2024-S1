@@ -6,7 +6,7 @@ class Archer : public Player {
 public:
     Archer();
     Archer(int health, int damage, int defense, int inventorySize, int skill);
-    int specialAttackArcher();
+    int specialAttackArcher(); //unfinished
 };
 
 #endif

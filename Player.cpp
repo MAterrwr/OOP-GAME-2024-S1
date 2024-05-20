@@ -40,7 +40,7 @@ void Player::takeDamage(int Damage) {
 bool Player::isAlive(){
     if (health > 0) {
         return true;
-    }else {
+    } else {
             return false;
         }
 }

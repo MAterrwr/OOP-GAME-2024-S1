@@ -3,20 +3,22 @@
 #include "Entity.h"
 
 class Player : public Entity {
-public:
+protected:
     int* inventory;
     int inventorySize; 
     int skill;
-
+public:
     Player();
     Player(int health, int damage, int defense, int inventorySize, int skill);
-    void takeDamage(int Damage); //unfinished
+    void takeDamage(int Damage); 
     bool isAlive();
 
     int getInventorySize();
     void setInventorySize(int inventorySize);
 
     int getSkill();
-    void setSkill(int skill);
+    void setSkill(int skill); 
 };
 #endif
+
+//skill unfinished

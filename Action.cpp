@@ -22,13 +22,7 @@ void Action::askUserAction(Player& player, Monster& monster) {
         {
         case 1:
             cout << "You chose to attack.\n";
-           
-            if (player.getHealth() > 0) {
-                monster.setHealth(monster.getHealth() - (player.getDamage() - monster.getDefense()));
-                player.setHealth(player.getHealth() - monster.getDamage());
-            } else {
-                cout << "You have been defeated.\n";
-            }
+            monster.takeDamage(player.getDamage);
             break;
         case 2: 
             cout << "You chose to defend.\n";

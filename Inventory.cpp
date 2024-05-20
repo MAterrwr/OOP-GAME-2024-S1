@@ -1,8 +1,12 @@
 #include "Inventory.h"
 #include <iostream>
 
+//inventory class defines the different potions that can be used and will delete once taken
+//class also creates a trophy that can be collected upon victory
+
 using namespace std;
 
+//constructor to initialise starting with 1 health and 1 skill potion
 Inventory::Inventory() : max_items(10), item_count(0), trophy("") {
     item_names = new string[max_items];
     item_quantities = new int[max_items];
@@ -13,11 +17,13 @@ Inventory::Inventory() : max_items(10), item_count(0), trophy("") {
     add_item(skill_potion, 1); 
 }
 
+//destructor to deallocate memory
 Inventory::~Inventory() {
     delete[] item_names;
     delete[] item_quantities;
 }
 
+//adds an item to the inventory
 void Inventory::add_item(string& item_name, int quantity) {
     for (int i = 0; i < item_count; ++i) {
         if (item_names[i] == item_name) {
@@ -34,6 +40,7 @@ void Inventory::add_item(string& item_name, int quantity) {
     }
 }
 
+//uses an item from the inventory
 void Inventory::use_item(string& item_name) {
     for (int i = 0; i < item_count; ++i) {
         if (item_names[i] == item_name) {
@@ -56,6 +63,7 @@ void Inventory::use_item(string& item_name) {
     cout << "Item " << item_name << " not found!" << endl;
 }
 
+//prints the current inventory
 void Inventory::print_inventory() {
     cout << "Inventory:" << endl;
     for (int i = 0; i < item_count; ++i) {
@@ -66,10 +74,12 @@ void Inventory::print_inventory() {
     }
 }
 
+//sets the trophy name
 void Inventory::set_trophy(string& trophy_name) {
     trophy = trophy_name;
 }
 
+//gets the trophy name
 string Inventory::get_trophy() {
     return trophy;
 }

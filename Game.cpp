@@ -8,8 +8,8 @@ using namespace std;
 
 void Game::play(Player& player, Monster& monster) {
     while (player.isAlive() && monster.isAlive()) {
-        cout << player << " health: " << player.getHealth() << endl;
-        cout << monster << " health: " << monster.getHealth() << endl;
+        cout << "Player's health: " << player.getHealth() << endl;
+        cout << "Monster's health: " << monster.getHealth() << endl;
         //Player's turn
         int userAction;
         cout << "Enter the action you want to do:\n";

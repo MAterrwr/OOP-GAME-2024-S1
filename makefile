@@ -1,2 +1,0 @@
-make: Action.cpp Entity.cpp Game.cpp Inventory.cpp Knight.cpp main.cpp Monster.cpp Player.cpp
-	clang++ -std=c++11 -o main Action.cpp Entity.cpp Game.cpp Inventory.cpp Knight.cpp main.cpp Monster.cpp Player.cpp 

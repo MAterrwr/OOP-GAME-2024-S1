@@ -1,5 +1,8 @@
 #ifndef KNIGHT_H
 #define KNIGHT_H
+
+#include <iostream> 
+#include "Entity.h"
 #include "Player.h"
 
 class Knight : public Player {

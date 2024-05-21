@@ -1,9 +1,4 @@
-#include <iostream>
-#include "Entity.h"
-#include "Player.h"
 #include "Action.h"
-#include "Knight.h"
-#include "Goblin.h"
 
 using namespace std;
 

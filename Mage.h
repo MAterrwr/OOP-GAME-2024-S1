@@ -1,6 +1,8 @@
 #ifndef MAGE_H
 #define MAGE_H
 
+#include <iostream>
+#include "Entity.h"
 #include "Player.h"
 
 class Mage : public Player {

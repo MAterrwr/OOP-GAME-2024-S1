@@ -1,6 +1,3 @@
-#include <iostream>
-#include "Entity.h"
-#include "Player.h"
 #include "Mage.h"
 
 using namespace std;

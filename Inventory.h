@@ -2,6 +2,8 @@
 #define INVENTORY_H
 
 #include <string>
+#include <iostream>
+#include "Entity.h"
 #include "Player.h"
 
 using namespace std;

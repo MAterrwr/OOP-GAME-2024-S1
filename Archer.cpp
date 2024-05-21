@@ -1,7 +1,6 @@
-#include <iostream> 
-#include "Entity.h"
-#include "Player.h"
 #include "Archer.h"
+
+using namespace std;
 
 Archer::Archer() {
     health = 100;
@@ -23,3 +22,6 @@ int Archer::specialAttackArcher() {
     return defense = 14;
 }
 
+void Archer::print() {
+    cout << "Making an entity" << endl;
+}

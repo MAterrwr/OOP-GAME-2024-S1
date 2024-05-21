@@ -1,5 +1,7 @@
 #ifndef MONSTER_H
 #define MONSTER_H
+
+#include <iostream> 
 #include "Entity.h"
 
 class Monster : public Entity {
@@ -13,5 +15,8 @@ public:
 
     int getLevel();
     void setLevel(int level);
+
+    void print();
 };
+
 #endif

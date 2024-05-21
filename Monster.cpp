@@ -1,6 +1,6 @@
-#include <iostream> 
-#include "Entity.h"
 #include "Monster.h"
+
+using namespace std;
 
 Monster::Monster() {
     health = 0;
@@ -38,4 +38,8 @@ int Monster::getLevel() {
 
 void Monster::setLevel(int level) {
     this->level = level;
+}
+
+void Monster::print() {
+    cout << "Craeting monster ..." << endl;
 }

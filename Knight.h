@@ -7,5 +7,8 @@ public:
     Knight();
     Knight(int health, int damage, int defense, int skill);
     int specialKnightAttack();
+
+    void print();
 };
+
 #endif

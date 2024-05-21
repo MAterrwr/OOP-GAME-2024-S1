@@ -3,6 +3,8 @@
 #include "Player.h"
 #include "Mage.h"
 
+using namespace std;
+
 Mage::Mage() {
     health = 100;
     damage = 20;
@@ -23,3 +25,6 @@ int Mage::specialAttackMage() {
     return damage * 2;
 }
 
+void Mage::print() {
+    cout << "Mage creation complete" << endl;
+}

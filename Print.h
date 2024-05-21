@@ -4,7 +4,7 @@
 
 class Print {
 public:
-    virtual void print_action();
+    virtual void print();
 };
 
 #endif

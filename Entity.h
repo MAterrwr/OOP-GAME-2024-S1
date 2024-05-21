@@ -1,6 +1,8 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include <iostream>
+
 class Entity{
 protected:
     int health;
@@ -19,5 +21,7 @@ public:
     void setHealth(int health);
     void setDamage(int damage);
     void setDefense(int defense);
+
+    void print();
 };
 #endif 

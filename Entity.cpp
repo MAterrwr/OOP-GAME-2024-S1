@@ -1,5 +1,6 @@
-#include <iostream>
 #include "Entity.h"
+
+using namespace std;
 
 Entity::Entity() {
     health = 0;
@@ -40,3 +41,7 @@ void Entity::setDefense(int defense) {
 bool Entity::Entity() {return 0;}
 
 void Entity::takeDamage(int Damage) {return 0;}
+
+void Entity::print() {
+    cout << "Making an entity" << endl;
+}

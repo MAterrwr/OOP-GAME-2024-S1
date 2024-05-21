@@ -2,6 +2,8 @@
 #include "Entity.h"
 #include "Player.h"
 
+using namespace std;
+
 Player::Player() : Entity(), inventory(nullptr), inventorySize(0)
 {
     inventorySize = 0;
@@ -51,6 +53,10 @@ int Player::getSkill() {
 
 void Player::setSkill(int skill) {
     this->skill = skill;
+}
+
+void Player::print() {
+    cout << "Creating player ..." << endl;
 }
 
 

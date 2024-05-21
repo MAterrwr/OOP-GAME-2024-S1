@@ -3,6 +3,8 @@
 #include "Player.h"
 #include "Knight.h"
 
+using namespace std;
+
 Knight::Knight() {
     health = 125;
     damage = 30;
@@ -21,5 +23,7 @@ int Knight::specialKnightAttack() {
     return damage * 2 ;
 }
 
-
+void Knight::print() {
+    cout << "Knight creation complete" << endl;
+}
 

@@ -8,5 +8,8 @@ public:
     Mage();
     Mage(int health, int damage, int defense, int inventorySize, int skill);
     int specialAttackMage();
+
+    void print();
 };
+
 #endif

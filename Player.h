@@ -18,6 +18,8 @@ public:
 
     int getSkill();
     void setSkill(int skill); 
+
+    void print();
 };
 #endif
 

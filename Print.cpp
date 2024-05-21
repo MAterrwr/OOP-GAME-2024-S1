@@ -1,3 +1,3 @@
 #include "Print.h"
 
-void Print::print_action() {return 0;}
+void Print::print() {return 0;}

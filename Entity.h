@@ -11,8 +11,8 @@ protected:
 public:
     Entity();
     Entity(int health, int damage, int defense);
-    virtual bool isAlive();
-    virtual void takeDamage(int Damage);
+    virtual bool isAlive() = 0;
+    virtual void takeDamage(int Damage) = 0;
 
     int getHealth();
     int getDamage();

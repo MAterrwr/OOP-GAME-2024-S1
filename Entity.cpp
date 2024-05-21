@@ -38,10 +38,6 @@ void Entity::setDefense(int defense) {
     this->defense = defense;
 }
 
-bool Entity::Entity() {return 0;}
-
-void Entity::takeDamage(int Damage) {return 0;}
-
 void Entity::print() {
     cout << "Making an entity" << endl;
 }

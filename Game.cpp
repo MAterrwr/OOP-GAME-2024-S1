@@ -25,8 +25,8 @@ void Game::play(Player& player, Monster& monster) {
         case 1:
             cout << "You chose to attack.\n";
             monster.takeDamage(player.getDamage);
-            cout << player << "dealt " << player.getDamage() << "to " << monster << endl;
-            cout << monster << "'s remaining health: " << monster.getHealth() << endl;
+            cout << "Player dealt " << player.getDamage() << " damage to the monster" << endl;
+            cout << "Monster's remaining health: " << monster.getHealth() << endl;
             break;
 
         case 2: 
@@ -49,8 +49,8 @@ void Game::play(Player& player, Monster& monster) {
         default:
             cout << "You chose to attack.\n";
             monster.takeDamage(player.getDamage);
-            cout << player << "dealt " << player.getDamage << "to " << monster << endl;
-            cout << monster << "'s remaining health: " << monster.getHealth << endl;
+            cout << "Player dealt " << player.getDamage() << " damage to the monster" << endl;
+            cout << "Monster's remaining health: " << monster.getHealth() << endl;
             break;
 
         }
@@ -64,8 +64,8 @@ void Game::play(Player& player, Monster& monster) {
 
         int damage = monster.getDamage();
         player.takeDamage(damage);
-        cout << player << "received " << monster.getDamage() << " damage from the " << monster << endl;
-        cout << player << " remaining health: " << player.getHealth() << endl;
+        cout << "Player received " << monster.getDamage() << " damage from the monster" << endl;
+        cout << "Player's remaining health: " << player.getHealth() << endl;
     }
     if (player.isAlive()) {
         cout << "Player wins!" << endl;

@@ -5,13 +5,14 @@
 #include "Entity.h"
 #include "Player.h"
 
+//mage class inherits from player
 class Mage : public Player {
 public:
-    Mage();
-    Mage(int health, int damage, int defense, int inventorySize, int skill);
-    int specialAttackMage();
+    Mage(); //default constructor
+    Mage(int health, int damage, int defense, int inventorySize, int skill); //constructor
+    int specialAttackMage(); //method for mages special attack
 
-    void print();
+    void print(); //method to print mages details
 };
 
 #endif

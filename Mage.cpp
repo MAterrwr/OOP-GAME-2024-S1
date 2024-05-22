@@ -3,7 +3,7 @@
 using namespace std;
 
 Mage::Mage() {
-    health = 100;
+    health = 100; //set defualt health damage defense inventory and skill
     damage = 20;
     defense = 11;
     inventorySize = 10;
@@ -11,7 +11,7 @@ Mage::Mage() {
 }
 
 Mage::Mage(int health, int damage, int defense, int inventorySize, int skill) {
-    this->health = health;
+    this->health = health; //set health damage defense inventory and skill
     this->damage = damage;
     this->defense = defense;
     this->inventorySize = inventorySize;
@@ -19,7 +19,7 @@ Mage::Mage(int health, int damage, int defense, int inventorySize, int skill) {
 }
 
 int Mage::specialAttackMage() {
-    return damage * 2;
+    return damage * 2; //returns double the damage
 }
 
 void Mage::print() {

@@ -5,13 +5,14 @@
 #include "Entity.h"
 #include "Player.h"
 
+//knight class inheriting from player class
 class Knight : public Player {
 public:
-    Knight();
-    Knight(int health, int damage, int defense, int skill);
-    int specialKnightAttack();
+    Knight(); //defualt constructor
+    Knight(int health, int damage, int defense, int skill); //constructor
+    int specialKnightAttack(); //method for knight special attack
 
-    void print();
+    void print(); //print knights details
 };
 
 #endif

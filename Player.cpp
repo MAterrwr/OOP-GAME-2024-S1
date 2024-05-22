@@ -3,13 +3,13 @@
 using namespace std;
 
 Player::Player() : Entity(), inventory(nullptr), inventorySize(0)
-{
+{ //initialise default values
     inventorySize = 0;
     skill = 0;
 }
 
 Player::Player(int health, int damage, int defense, int inventorySize, int skill) : Entity(health, damage, defense)
-{
+{ //initialise with provided values
     this->inventorySize = inventorySize;
     this->skill = skill;    
 }
@@ -25,10 +25,10 @@ int Player::getInventorySize() {
 }
 
 void Player::takeDamage(int Damage) {
-    int actualDamage = Damage - defense;
+    int actualDamage = Damage - defense; //calculate actual damage considering the defense
     
     if (actualDamage < 0) {
-        actualDamage = 0;
+        actualDamage = 0; //ensure damage is not negative
     }
     health -= actualDamage;
 

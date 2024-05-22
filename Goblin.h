@@ -3,10 +3,11 @@
 
 #include "Monster.h"
 
+//goblin class inherting from monster class
 class Goblin : public Monster {
 public:
-    Goblin();
-    Goblin(int health, int damage, int defense, int level);
+    Goblin(); //default constructor
+    Goblin(int health, int damage, int defense, int level); //constructor
 };
 
 #endif

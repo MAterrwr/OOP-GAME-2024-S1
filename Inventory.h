@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//inventory class inheriting from player class
 class Inventory : public Player {
 private:
     int max_items; //create a max items integer

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib> 
 #include "Entity.h"
 #include "Player.h"
 #include "Monster.h"
@@ -7,8 +8,10 @@
 #include "Knight.h"
 
 int main (){
-    Player player(100, 10, 5, 10, 5);
-    Monster monster(100, 10, 5, 1);
+    Player player(100, 30, 5, 10, 5);
+    player.print();
+    Monster monster(70, 10, 5, 1);
+    monster.print();
     Game game;
     game.play(player, monster);
     return 0;

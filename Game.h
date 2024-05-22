@@ -9,6 +9,7 @@
 #include "Archer.h"
 #include <iostream>
 #include <string>
+#include <cstdlib> 
 
 class Game {
 public:

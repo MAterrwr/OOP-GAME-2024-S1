@@ -2,21 +2,17 @@
 
 using namespace std;
 
-#include "Game.h"
-
-using namespace std;
-
 void Game::play(Player& player, Monster& monster) {
     while (player.isAlive() && monster.isAlive()) {
         cout << "Player's health: " << player.getHealth() << endl;
-        cout << "Monster's health: " << monster.getHealth() << endl;
+        cout << "Monster's health: " << monster.getHealth() << "\n\n";
         //Player's turn
         int userAction;
         cout << "Enter the action you want to do:\n";
-        cout << "1 for attack\n";
-        cout << "2 for defend\n";
-        cout << "3 for inventory\n";
-        cout << "4 for special ability\n";
+        cout << "1. for attack\n";
+        cout << "2. for defend\n";
+        cout << "3. for inventory\n";
+        cout << "4. for special ability\n" << endl;
         cin >> userAction;
 
     if (userAction == 1 || userAction == 2 || userAction == 3 || userAction == 4) {
@@ -25,7 +21,7 @@ void Game::play(Player& player, Monster& monster) {
         case 1:
             cout << "You chose to attack.\n";
             monster.takeDamage(player.getDamage());
-            cout << "Player dealt " << player.getDamage() << " damage to the monster" << endl;
+            cout << "Player dealt " << player.getDamage() << " damage to the monster\n" << endl;
             cout << "Monster's remaining health: " << monster.getHealth() << endl;
             break;
 
@@ -64,13 +60,13 @@ void Game::play(Player& player, Monster& monster) {
 
         int damage = monster.getDamage();
         player.takeDamage(damage);
-        cout << "Player received " << monster.getDamage() << " damage from the monster" << endl;
+        cout << "Player received " << monster.getDamage() << " damage from the monster\n" << endl;
         cout << "Player's remaining health: " << player.getHealth() << endl;
     }
     if (player.isAlive()) {
-        cout << "Player wins!" << endl;
+        cout << "\nPlayer wins!" << endl;
     } else {
-        cout << "Enemy wins!" << endl;
+        cout << "\nEnemy wins!" << endl;
     }
 }
 

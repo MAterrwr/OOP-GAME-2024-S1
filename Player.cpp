@@ -71,3 +71,7 @@ string Player::getName() {return name;} //getter for name of character
 void Player::print() { //print output once constructor successfully initialised
     cout << "Creating player ..." << endl;
 }
+
+int Player::getMaxHealth() {return 0;}
+
+int Player::getMaxSkill() {return 0;}

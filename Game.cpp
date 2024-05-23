@@ -214,28 +214,33 @@ void Game::play(Player& player, Monster& monster) {
                 break;
 
         case 4: //special ability case
-            cout << "You chose to use your special ability." <<endl;
+            cout << "You chose to use your special ability." << endl;
             // Code to perform special ability action and display what happens
             if (player.getSkill_meter() == 100 || player.getSkill_meter() > 100) {
                 if (player.getPlayerClass() == "Knight") {
                     cout << "Knight uses fire sword skill and attacks for double damage! " << endl;
                     monster.takeDamage(P_damage * 2); //double attack damage and attack monster
                     player.setSkill_meter(0); //reset skill bar to 0
-                    cout << "Knight deals " << P_damage * 2 << " damage! \n" << endl;
+                    cout << "Knight deals " << P_damage * 2 << " damage!" << endl;
+                    cout << "Monster's remaining health: " << monster.getHealth() << endl << endl;
+
                 } else if (player.getPlayerClass() == "Mage") {
                     cout << "Mage used skill and summons lightning! \n" << endl;
                     player.setSkill_meter(0); //reset skill bar to 0
                     monster.takeDamage(P_damage + 25); //add 25 damage to the mages attack
-                    cout << "Mage deals " << P_damage + 25 << " damage! \n" <<endl;
+                    cout << "Mage deals " << P_damage + 25 << " damage!" << endl;
+                    cout << "Monster's remaining health: " << monster.getHealth() << endl << endl;
+                    
                 } else if (player.getPlayerClass() == "Archer") {
                     cout << "Archer uses skill and shoots a flaming arrow!" << endl;
                     player.setSkill_meter(0); //reset skill bar to 0
                     monster.takeDamage(P_damage + 10); //attack damage increse by 10 for the turn
-                    cout << "Archer deals " << P_damage + 10 << " damage! \n" << endl;
+                    cout << "Archer deals " << P_damage + 10 << " damage!" << endl;
+                    cout << "Monster's remaining health: " << monster.getHealth() << endl << endl;
                 }
             }
             else {
-                cout << "Special ability not charged yet. Continue playing to charge it." << endl; //output to display ability not charged
+                cout << "Special ability not charged yet. Keep attacking to charge it." << endl; //output to display ability not charged
                 continue;
             }
 
@@ -262,11 +267,13 @@ void Game::play(Player& player, Monster& monster) {
         if (P_block) {
             player.takeDamage(M_damage);
             cout << P_name << " received " << M_damage << " damage from the monster" << endl; //player blocked attack
-            cout << endl << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
+            cout << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
+
         } else {
             player.takeDamage(M_damage * 2);
             cout << P_name << " received " << M_damage * 2 << " damage from the monster" << endl; //failed to block so takes double damage
-            cout << endl << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
+            cout << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
+
         }
         
     }

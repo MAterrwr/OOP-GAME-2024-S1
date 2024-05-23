@@ -44,4 +44,5 @@ void Monster::setLevel(int level) {
 
 void Monster::print() {
     cout << "Creating monster ..." << endl;
+    cout << "Monster creation complete..." << endl;
 }

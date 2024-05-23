@@ -59,12 +59,12 @@ void Game::startGame() {
 //the play function manages the game loop and player to monster interaction
 void Game::play(Player& player, Monster& monster) {
     while (player.isAlive() && monster.isAlive()) { //continue the game loop as long as both the player and the monster are alive
-        string P_name = player.getName();
+        string P_name = player.getName(); //Players name
         int P_damage = player.getDamage(); //players damage
         int M_damage = monster.getDamage(); //monsters damage
         
         //display current health status of player and monster
-        cout << P_name << "'s health: " << player.getHealth() << endl;
+        cout << endl << P_name << "'s health: " << player.getHealth() << endl;
         cout << "Monster's health: " << monster.getHealth() << "\n\n";
 
         //Player's turn
@@ -157,7 +157,7 @@ void Game::play(Player& player, Monster& monster) {
             break;   
 
         case 5:
-            cout << "quiting\n";
+            cout << "Quiting...\n";
             return; //exit the game
             break;
 
@@ -172,11 +172,11 @@ void Game::play(Player& player, Monster& monster) {
 
         if (P_block) {
             player.takeDamage(M_damage);
-            cout << P_name << " received " << M_damage << " damage from the monster\n" << endl; //player blocked attack
+            cout << P_name << " received " << M_damage << " damage from the monster" << endl; //player blocked attack
             cout << P_name << "'s remaining health: " << player.getHealth() << endl;
         } else {
             player.takeDamage(M_damage * 2);
-            cout << P_name << " received " << M_damage * 2 << " damage from the monster\n" << endl; //failed to block so takes double damage
+            cout << P_name << " received " << M_damage * 2 << " damage from the monster" << endl; //failed to block so takes double damage
             cout << P_name << "'s remaining health: " << player.getHealth() << endl;
         }
         

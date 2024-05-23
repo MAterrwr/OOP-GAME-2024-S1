@@ -49,9 +49,12 @@ void Inventory::removeItem(std::string item) {
 } */
 
 // Use a health potion
-void Inventory::useHealthPotion(int& playerHealth) {
+void Inventory::useHealthPotion(int& playerHealth, int maxHealth) {
     if (healthPotionCount > 0) {
         playerHealth += 25; // Increase player's health by 25
+        if (playerHealth > maxHealth) {
+            playerHealth = maxHealth;
+        }
         --healthPotionCount; // Decrease health potion count
         cout << "Used a health potion. Player's health increased by 50." << endl;
     } else {

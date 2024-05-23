@@ -17,6 +17,7 @@ protected:
 public:
     Player(); //default construct
     Player(int health, int damage, int defense); //constructor
+    virtual int getMaxHealth() = 0;
     ~Player(); //default destructor
 
     virtual string getName(); //getter for name of character for polymorphism

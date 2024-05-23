@@ -28,3 +28,7 @@ string Knight::getName() {return name;} //getter for name
 void Knight::print() { //prints output once function member successfully initialised
     cout << "Knight creation complete\n" << endl;
 }
+
+int Knight::getMaxHealth() {
+    return 125;
+}

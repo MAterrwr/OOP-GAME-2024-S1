@@ -19,6 +19,7 @@ public:
     /*void cast_skill(); */ //method for knight special attack
 
     void print(); //prints output once function member successfully initialised
+    int getMaxHealth() override;
 };
 
 #endif

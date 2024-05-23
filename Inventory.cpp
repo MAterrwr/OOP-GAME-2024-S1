@@ -40,7 +40,7 @@ void Inventory::removeItem(std::string item) {
 void Inventory::useSkillPotion(int& playerSkill) {
     //add skill code
     if(skillPotionCount > 0) {
-        playerskill += 0;//determine what to do with skill
+        player.setSkill_meter += 0;//determine what to do with skill
         --skillPotionCount; //decrease skill potion amount
         cout << "Used a skill potion, Special ablity fully charged!" <<endl;
     } else {

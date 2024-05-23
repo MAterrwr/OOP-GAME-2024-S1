@@ -30,6 +30,7 @@ void Player::takeDamage(int Damage) {
     if (health < 0) {
         health = 0;
     }
+
 }
 
 bool Player::isAlive(){

@@ -80,7 +80,7 @@ void Game::play(Player& player, Monster& monster) {
             cout << "4. for special ability\n";
             cout << "5. to quit the game\n" << endl;
             cout << "\n";
-            cout << "[         ]"<< endl;
+            cout << "[" <<player.getSkill_meter()<<"%]"<< endl;
                 
             cin >> userAction;
 
@@ -117,6 +117,7 @@ void Game::play(Player& player, Monster& monster) {
             if (random_number < 40) {
                 cout << "Player failed to block incoming attack" << endl;
                 P_block = false;
+                player.setSkill_meter(player.getSkill_meter() + 10); //increase skill meter
             } else {
                 cout << "Player has successfully block the incoming attack" << endl;
                 P_block = true;
@@ -142,11 +143,11 @@ void Game::play(Player& player, Monster& monster) {
                         cout << "Player used a health potion. Health increased by 25." << endl;
                         cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
                     } else if (usePotion == 's') {
-                        cout << "Using skill potion... \n"
-                        player.getInventory()useSkillPotion(player.getSkill());
-                        cout << "Special ability fully charged!"
+                        cout << "Using skill potion... \n";
+                        player.getInventory().useSkillPotion(player.getSkill_meter());
+                        cout << "Special ability fully charged!";
                     }   else {
-                        cout << "Please enter h or s. \n"
+                        cout << "Please enter h or s. \n";
                     }
                 } else {
                     cout << "No potions available, use another option \n" << endl;

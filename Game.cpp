@@ -236,6 +236,7 @@ void Game::play(Player& player, Monster& monster) {
             }
             else {
                 cout << "Special ability not charged yet. Continue playing to charge it." << endl; //output to display ability not charged
+                continue;
             }
 
             if (player.getSkill_meter() > 100) {

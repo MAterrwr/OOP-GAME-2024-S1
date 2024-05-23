@@ -179,12 +179,14 @@ void Game::play(Player& player, Monster& monster) {
                 cout << "\nUse health potion (h), skill potion (s), or return with anything else. ";
                 char usePotion;
                 cin >> usePotion;
+                
                     if (usePotion == 'h') {
                         //code to use health potion
                         if (player.getInventory().getHealthPotionCount() > 0) {
                             cout << "Using health potion...\n";
                             player.getInventory().useHealthPotion(player.getHealth(), player.getMaxHealth());
                             cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
+
                         } else { //display if no health potions available
                             cout << "No health potions available." << endl;
                             continue;
@@ -195,6 +197,7 @@ void Game::play(Player& player, Monster& monster) {
                             player.getInventory().useSkillPotion(player.getSkill_meter(), player.getMaxSkill());
                             cout << "Special ability charging!" << endl;
                             player.setSkill_meter(player.getSkill_meter() + 80); //increase skill meter by 80
+
                         } else { //display if no skill potions available 
                             cout << "No skill potions available." << endl;
                             continue;

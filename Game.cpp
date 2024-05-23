@@ -187,4 +187,4 @@ void Game::play(Player& player, Monster& monster) {
     } else {
         cout << "\nEnemy wins!" << endl;
     }
-}
+} //fix

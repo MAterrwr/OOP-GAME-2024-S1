@@ -11,7 +11,7 @@ void Game::startGame() {
     cout << "In this role-playing game (RPG), you will take on the role of a brave hero, striving to defeat formidable monsters and restore peace to the land.\n" << endl;
 
     string playerClass;
-    cout << "First, enter your class(Knight, Mage, Archer): " << endl;
+    cout << "First, enter your class [Knight, Mage, Archer}: " << endl;
     cin >> playerClass;
 
     string rules;
@@ -52,10 +52,10 @@ void Game::startGame() {
 
     while (!createMonster) {
         int monsterLevel;
-        cout << "Enter the monster level (1-5): ";
+        cout << "Enter the monster level (1-4): ";
         cin >> monsterLevel;
 
-        if (monsterLevel < 1 || monsterLevel > 5) {
+        if (monsterLevel < 1 || monsterLevel > 4) {
             cout << "Invalid level. Please try again." << endl;
             cin.clear(); // Clear the error flag
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -75,12 +75,9 @@ void Game::startGame() {
                     level = 1.5;
                     createMonster = true;
                     break;
+
                 case 4:
                     level = 1.75;
-                    createMonster = true;
-                    break;
-                case 5:
-                    level = 2;
                     createMonster = true;
                     break;
             }
@@ -179,7 +176,7 @@ void Game::play(Player& player, Monster& monster) {
                 cout << "\nUse health potion (h), skill potion (s), or return with anything else. ";
                 char usePotion;
                 cin >> usePotion;
-                
+
                     if (usePotion == 'h') {
                         //code to use health potion
                         if (player.getInventory().getHealthPotionCount() > 0) {

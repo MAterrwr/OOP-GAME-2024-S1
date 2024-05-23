@@ -19,10 +19,6 @@ Knight::Knight(string name, int health, int damage, int defense) {
     skill_meter = 0;
 }
 
-/*void Knight::cast_skill() {
-    return damage * 2; //returns double the damage
-}*/
-
 string Knight::getName() {return name;} //getter for name
 
 void Knight::print() { //prints output once function member successfully initialised
@@ -31,4 +27,8 @@ void Knight::print() { //prints output once function member successfully initial
 
 int Knight::getMaxHealth() {
     return 125;
+}
+
+int Knight::getMaxSkill() {
+    return 100;
 }

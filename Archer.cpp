@@ -19,10 +19,6 @@ Archer::Archer(string name, int health, int damage, int defense) { //constructor
     skill_meter = 0;
 }
 
-/*void Archer::cast_skill() { //special attack for the archer which increases the defense
-    return defense = 14;
-}*/
-
 string Archer::getName() {return name;} //getter for name
 
 void Archer::print() { //prints output once function member successfully initialised
@@ -30,5 +26,9 @@ void Archer::print() { //prints output once function member successfully initial
 }
 
 int Archer::getMaxHealth() {
+    return 100;
+}
+
+int Archer::getMaxSkill() {
     return 100;
 }

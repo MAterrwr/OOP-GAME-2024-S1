@@ -19,11 +19,6 @@ Mage::Mage(string name, int health, int damage, int defense) {
     skill_meter = 0;
 }
 
-/* void Mage::cast_skill(); { 
-    int damage = 0;
-    cout << "Mage has cast a skill" << damage << endl; //returns double the damage
-} */
-
 string Mage::getName() {return name;} //getter for name
 
 void Mage::print() { //prints output once function member successfully initialised
@@ -31,5 +26,9 @@ void Mage::print() { //prints output once function member successfully initialis
 }
 
 int Mage::getMaxHealth() {
+    return 100;
+}
+
+int Mage::getMaxSkill() {
     return 100;
 }

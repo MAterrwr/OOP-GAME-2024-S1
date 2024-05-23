@@ -20,7 +20,7 @@ public:
     void addItem(string item); // Add an item to the inventory
     void removeItem(string item); // Remove an item from the inventory
 
-    void useSkillPotion(int playerSkill);
+    void useSkillPotion(int playerSkill, int maxSkill);
     void useHealthPotion(int playerhealth, int maxHealth); // Use a health potion
     int printInventory(); // Print the inventory items
     

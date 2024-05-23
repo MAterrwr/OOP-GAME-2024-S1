@@ -18,6 +18,7 @@ public:
     Player(); //default construct
     Player(int health, int damage, int defense); //constructor
     virtual int getMaxHealth() = 0;
+    virtual int getMaxSkill() = 0;
     virtual ~Player(); //default destructor
 
     virtual string getName(); //getter for name of character for polymorphism

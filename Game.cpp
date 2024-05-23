@@ -18,7 +18,7 @@ void Game::startGame() {
     cout << "\nBefore we start, would you like to familiarise yourself with rules? [Yes/No]" << endl;
     cin >> rules;
 
-    if (rules == "Yes") {
+    if (rules == "Yes" && "yes") {
         cout << "\nIn Epic Quest, your journey will take you through treacherous landscapes, from dense forests to dark dungeons and haunted ruins." << endl;
         cout << "You will encounter a variety of monsters, each with unique strengths and weaknesses. Combat will test your strategic thinking and quick reflexes as you decide the best course of action:" << endl;
         cout << "\nAttack: Strike your enemy with your weapon or spells." << endl;
@@ -93,7 +93,7 @@ void Game::startGame() {
     play(*player, monster);
 
     // Clean up dynamically allocated memory
-    delete [] player;
+    delete player;
 }
 
 //the play function manages the game loop and player to monster interaction
@@ -149,6 +149,9 @@ void Game::play(Player& player, Monster& monster) {
             cout << P_name <<" dealt " << P_damage << " damage to the monster\n" << endl;
             cout << "Monster's remaining health: " << monster.getHealth() << endl << endl;
             player.setSkill_meter(player.getSkill_meter() + 20); //increase skill meter
+            if (player.getSkill_meter() > 100) {
+                player.setSkill_meter(100);
+            }
             break;
 
         case 2: 
@@ -163,61 +166,82 @@ void Game::play(Player& player, Monster& monster) {
                 P_block = true;
                 player.setSkill_meter(player.getSkill_meter() + 35); //increase skill meter
             }
+            if (player.getSkill_meter() > 100) {
+                player.setSkill_meter(100);
+            }
             break;
 
         case 3:
-<<<<<<< Updated upstream
               cout << "You chose to check your inventory.\n\n";
-                // Code to perform inventory action
+                //code to perform inventory action
                 if (player.getInventory().printInventory() > 0) {
-                // After displaying inventory, player may choose to use a health potion
+                //after displaying inventory, player may choose to use a health potion
                 cout << "\nUse health potion (h), skill potion (s), or return with anything else. ";
                 char usePotion;
                 cin >> usePotion;
-=======
-               cout << "You chose to check your inventory.\n";
-                // Code to perform inventory action
-                if (player.getInventory().printInventory() > 0) {
-                    // After displaying inventory, player may choose to use a health potion
-                    cout << "Use health potion (h), skill potion (s), or return with anything else. \n";
-                    char usePotion;
-                    cin >> usePotion;
->>>>>>> Stashed changes
                     if (usePotion == 'h') {
-                        // Code to use health potion
-                        cout << "Using health potion...\n";
-                        player.getInventory().useHealthPotion(player.getHealth(), player.getMaxHealth());
-                        cout << "New health: " << player.getHealth() << "\n" << endl; // Display new health
+                        //code to use health potion
+                        if (player.getInventory().getHealthPotionCount() > 0) {
+                            cout << "Using health potion...\n";
+                            player.getInventory().useHealthPotion(player.getHealth(), player.getMaxHealth());
+                            cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
+                        } else {
+                            cout << "No health potions available." << endl;
+                            continue;
+                        }
                     } else if (usePotion == 's') {
-                        cout << "Using skill potion... \n" << endl;
-                        player.getInventory().useSkillPotion(player.getSkill_meter());
-                        cout << "Special ability fully charged!" << endl;
+                        if (player.getInventory().getSkillPotionCount() > 0) { 
+                            cout << "Using skill potion... \n" << endl;
+                            player.getInventory().useSkillPotion(player.getSkill_meter(), player.getMaxSkill());
+                            cout << "Special ability charging!" << endl;
+                            player.setSkill_meter(player.getSkill_meter() + 80);
+                        } else {
+                            cout << "No skill potions available." << endl;
+                            continue;
+                        }
                     } else {
                         cout << "Invalid input. Returning to the game.\n" << endl;
+                        continue;
                     }
                 } else {
                     cout << "No potions available, use another option \n" << endl;
-                    continue; // Return to start of loop
+                    continue; //return to start of loop
                 }
+
+            if (player.getSkill_meter() > 100) {
+                player.setSkill_meter(100);
+            }
                 break;
+
         case 4:
-            cout << "You chose to use your special ability.\n";
+            cout << "You chose to use your special ability." <<endl;
             // Code to perform special ability action
             if (player.getSkill_meter() == 100 || player.getSkill_meter() > 100) {
                 if (player.getPlayerClass() == "Knight") {
-                    cout << "Knight used special ability. Defense increased to 20." << endl;
+                    cout << "Knight uses fire sword skill and attacks for double damage! " << endl;
+                    monster.takeDamage(P_damage * 2);
                     player.setSkill_meter(0);
+                    cout << "Knight deals " << P_damage * 2 << " damage! \n" << endl;
                 } else if (player.getPlayerClass() == "Mage") {
-                    cout << "Mage used special ability. Damage increased to 30." << endl;
+                    cout << "Mage used skill and summons lightning! \n" << endl;
                     player.setSkill_meter(0);
+                    monster.takeDamage(P_damage + 25);
+                    cout << "Mage deals " << P_damage + 25 << " damage! \n" <<endl;
                 } else if (player.getPlayerClass() == "Archer") {
-                    cout << "Archer used special ability. Defense increased to 14." << endl;
+                    cout << "Archer uses skill and shoots a flaming arrow!" << endl;
                     player.setSkill_meter(0);
+                    monster.takeDamage(P_damage + 10);
+                    cout << "Archer deals " << P_damage + 10 << " damage! \n" << endl;
                 }
             }
             else {
                 cout << "Special ability not charged yet. Continue playing to charge it." << endl;
             }
+
+            if (player.getSkill_meter() > 100) {
+                player.setSkill_meter(100);
+            }
+
             break;   
 
         case 5:
@@ -251,4 +275,4 @@ void Game::play(Player& player, Monster& monster) {
     } else {
         cout << "\nEnemy wins!" << endl;
     }
-} //fix
+} 

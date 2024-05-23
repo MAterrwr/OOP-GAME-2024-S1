@@ -1,7 +1,7 @@
 #include "Inventory.h"
 
 // Constructor
-Inventory::Inventory() : items(nullptr), itemCount(0), capacity(10), healthPotionCount(1) {
+Inventory::Inventory() : items(nullptr), itemCount(0), capacity(10), healthPotionCount(1), skillPotionCount(1) {
     items = new string[capacity]; // Allocate memory for items array
     // Add default items
     addItem("Health Potion");
@@ -40,7 +40,11 @@ void Inventory::removeItem(std::string item) {
 void Inventory::useSkillPotion(int& playerSkill) {
     //add skill code
     if(skillPotionCount > 0) {
+<<<<<<< Updated upstream
         player.setSkill_meter += 0;//determine what to do with skill
+=======
+        playerSkill += 0;//determine what to do with skill
+>>>>>>> Stashed changes
         --skillPotionCount; //decrease skill potion amount
         cout << "Used a skill potion, Special ablity fully charged!" <<endl;
     } else {
@@ -65,7 +69,7 @@ int Inventory::printInventory() {
     for (int i = 0; i < itemCount; ++i) {
         cout << items[i] << endl;
     }
-    return healthPotionCount;
+    return healthPotionCount + skillPotionCount;
 }
 
 // Get the number of items in the inventory

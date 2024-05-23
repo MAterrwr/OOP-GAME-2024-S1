@@ -143,11 +143,19 @@ void Game::play(Player& player, Monster& monster) {
                         cout << "Player used a health potion. Health increased by 25." << endl;
                         cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
                     } else if (usePotion == 's') {
+<<<<<<< Updated upstream
                         cout << "Using skill potion... \n";
                         player.getInventory().useSkillPotion(player.getSkill_meter());
                         cout << "Special ability fully charged!";
                     }   else {
                         cout << "Please enter h or s. \n";
+=======
+                        cout << "Using skill potion... \n" << endl;
+                        //player.getInventory().useSkillPotion(player.getSkill_meter());
+                        cout << "Special ability fully charged!" << endl;
+                    }   else {
+                        cout << "Please enter h or s. \n" <<endl;
+>>>>>>> Stashed changes
                     }
                 } else {
                     cout << "No potions available, use another option \n" << endl;

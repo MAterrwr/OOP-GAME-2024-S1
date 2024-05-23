@@ -7,10 +7,26 @@ void Game::startGame() {
     system("clear"); // clears the terminal
 
     // Ask the user for their preferred class
+    cout << "Welcome to the world of Epic Quest! Prepare to embark on a thrilling adventure filled with perilous battles, cunning strategies, and heroic deeds." << endl;
+    cout << "In this role-playing game (RPG), you will take on the role of a brave hero, striving to defeat formidable monsters and restore peace to the land.\n" << endl;
+
     string playerClass;
-    cout << "Enter your class (Knight, Mage, Archer): ";
+    cout << "First, enter your class(Knight, Mage, Archer): " << endl;
     cin >> playerClass;
 
+    string rules;
+    cout << "\nBefore we start, would you like to familiarise yourself with rules? [Yes/No]" << endl;
+    cin >> rules;
+
+    if (rules == "Yes") {
+        cout << "\nIn Epic Quest, your journey will take you through treacherous landscapes, from dense forests to dark dungeons and haunted ruins." << endl;
+        cout << "You will encounter a variety of monsters, each with unique strengths and weaknesses. Combat will test your strategic thinking and quick reflexes as you decide the best course of action:" << endl;
+        cout << "\nAttack: Strike your enemy with your weapon or spells." << endl;
+        cout << "Defend: Brace yourself to reduce incoming damage." << endl;
+        cout << "Inventory: Use items from your inventory to heal or gain an advantage." << endl;
+        cout << "Special Ability: Unleash your hero's unique special ability for a powerful effect." << endl;
+        cout << "Quit: Leave the game if you need to take a break.\n" << endl;
+    }
 
     // Create player and monster objects based on the chosen class
     Player* player; // Declare the player variable outside of the if-else statement
@@ -30,29 +46,48 @@ void Game::startGame() {
         player = new Knight();
         player->setPlayerClass("Knight");
     }
-    string monsterLevel;
-    cout << "Enter the monster level (1-5): ";
-    cin >> monsterLevel;
 
     double level; // Declare the level variable outside of the if-else statement
+    bool createMonster = false;
 
-    if (monsterLevel == "1") {
-        level = 1;
-    } else if (monsterLevel == "2") {
-        level = 1.25;
-    } else if (monsterLevel == "3") {
-        level = 1.5;
-    } else if (monsterLevel == "4") {
-        level = 1.75;
-    } else if (monsterLevel == "5") {
-        level = 2;
-    } else {
-        cout << "Invalid level. Defaulting to level 1." << endl;
-        level = 1; // Assign a default value to level
+    while (!createMonster) {
+        int monsterLevel;
+        cout << "Enter the monster level (1-5): ";
+        cin >> monsterLevel;
+
+        if (monsterLevel < 1 || monsterLevel > 5) {
+            cout << "Invalid level. Please try again." << endl;
+            cin.clear(); // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            switch (monsterLevel) {
+                case 1:
+                    level = 1;
+                    createMonster = true;
+                    break;
+
+                case 2:
+                    level = 1.25;
+                    createMonster = true;
+                    break;
+
+                case 3:
+                    level = 1.5;
+                    createMonster = true;
+                    break;
+                case 4:
+                    level = 1.75;
+                    createMonster = true;
+                    break;
+                case 5:
+                    level = 2;
+                    createMonster = true;
+                    break;
+            }
+        }
     }
 
     Monster monster(100, 10, 0, level); // Create the monster object with the correct level
-
 
     // Start the game loop
     play(*player, monster);
@@ -63,6 +98,8 @@ void Game::startGame() {
 
 //the play function manages the game loop and player to monster interaction
 void Game::play(Player& player, Monster& monster) {
+    cout << "\nLet the quest begin!\n";
+
     while (player.isAlive() && monster.isAlive()) { //continue the game loop as long as both the player and the monster are alive
         string P_name = player.getName(); //Players name
         int P_damage = player.getDamage(); //players damage
@@ -82,10 +119,9 @@ void Game::play(Player& player, Monster& monster) {
             cout << "1. for attack\n";
             cout << "2. for defend\n";
             cout << "3. for inventory\n";
-            cout << "4. for special ability\n";
+            cout << "4. for special ability " << "[" <<player.getSkill_meter() << "%]" << endl;
             cout << "5. to quit the game\n" << endl;
             cout << "\n";
-            cout << "[" <<player.getSkill_meter()<<"%]"<< endl;
                 
             cin >> userAction;
 
@@ -130,11 +166,11 @@ void Game::play(Player& player, Monster& monster) {
             break;
 
         case 3:
-              cout << "You chose to check your inventory.\n";
+              cout << "You chose to check your inventory.\n\n";
                 // Code to perform inventory action
                 if (player.getInventory().printInventory() > 0) {
                 // After displaying inventory, player may choose to use a health potion
-                cout << "Use health potion (h), skill potion (s), or return with anything else. ";
+                cout << "\nUse health potion (h), skill potion (s), or return with anything else. ";
                 char usePotion;
                 cin >> usePotion;
                     if (usePotion == 'h') {

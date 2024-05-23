@@ -199,7 +199,6 @@ void Game::play(Player& player, Monster& monster) {
                         if (player.getInventory().getSkillPotionCount() > 0) { 
                             cout << "Using skill potion... \n" << endl;
                             player.getInventory().useSkillPotion(player.getSkill_meter(), player.getMaxSkill());
-                            cout << "Special ability charging!" << endl;
                             player.setSkill_meter(player.getSkill_meter() + 80); //increase skill meter by 80
 
                         } else { //display if no skill potions available 

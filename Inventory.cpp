@@ -45,7 +45,7 @@ void Inventory::useSkillPotion(int playerSkill, int maxSkill) {
             playerSkill = maxSkill;
         }
         --skillPotionCount; //decrease skill potion amount
-        cout << "Used a skill potion, Special ablity fully charged!" <<endl;
+        cout << "Used a skill potion, special ability charging!" <<endl;
     } else {
         cout << "No skill potion available" << endl;
     }

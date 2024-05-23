@@ -26,7 +26,7 @@ class UnitTest{
         assert(player.getHealth() == 100); //check if health damage and defese is correct
         assert(player.getDamage() == 10);
         assert(player.getDefense() == 0);
-        cout << "Player tests passed" << endl; //if correct display test passed
+        cout << "Player tests passed\n" << endl; //if correct display test passed
     }
 
     void testMonster(){ //test for monster
@@ -35,34 +35,34 @@ class UnitTest{
         assert(monster.getDamage() == 10);
         assert(monster.getDefense() == 0);
         assert(monster.getLevel() == 1);
-        cout << "Monster tests passed" << endl; //print if test passed
+        cout << "Monster tests passed\n" << endl; //print if test passed
     } 
 
     void testKnight(){ //test for knight
         Knight knight; //initialise with default constructor
         assert(knight.getHealth() == 125); //check if stats are initialised correctly
-        assert(knight.getDamage() == 30);
+        assert(knight.getDamage() == 15);
         assert(knight.getDefense() == 14);
         assert(knight.getSkill_meter() == 0);
-        cout << "Knight tests passed" << endl; //print if test passed
+        cout << "Knight tests passed\n" << endl; //print if test passed
     }
 
     void testMage(){ //test for mage
         Mage mage; //initialise with default constructor
         assert(mage.getHealth() == 100); //check if stats initialised correctly
-        assert(mage.getDamage() == 20);
+        assert(mage.getDamage() == 18);
         assert(mage.getDefense() == 11);
         assert(mage.getSkill_meter() == 0);
-        cout << "Mage tests passed" << endl; //print if test passed
+        cout << "Mage tests passed\n" << endl; //print if test passed
     }
 
     void testArcher(){ //test for archer
         Archer archer; //initialise with default constructor
         assert(archer.getHealth() == 100); //check if stats initialised correctly
-        assert(archer.getDamage() == 40);
+        assert(archer.getDamage() == 16);
         assert(archer.getDefense() == 9);
         assert(archer.getSkill_meter() == 0);
-        cout << "Archer tests passed" << endl; //print if test passed
+        cout << "Archer tests passed\n" << endl; //print if test passed
     }
 
 };

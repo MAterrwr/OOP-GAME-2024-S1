@@ -10,15 +10,39 @@ void Game::startGame() {
     cout << "Welcome to the world of Epic Quest! Prepare to embark on a thrilling adventure filled with perilous battles, cunning strategies, and heroic deeds." << endl;
     cout << "In this role-playing game (RPG), you will take on the role of a brave hero, striving to defeat formidable monsters and restore peace to the land.\n" << endl;
 
+    // Create player and monster objects based on the chosen class
+    Player* player; // Declare the player variable outside of the if-else statement
     string playerClass;
     cout << "First, enter your class [Knight, Mage, Archer}: " << endl;
-    cin >> playerClass;
+    bool createClass = false;
+
+    while (!createClass) {
+        cin >> playerClass;
+
+        if (playerClass == "Knight") {
+            player = new Knight();
+            player->setPlayerClass("Knight");
+            createClass = true;
+        } else if (playerClass == "Mage") {
+            player = new Mage();
+            player->setPlayerClass("Mage");
+            createClass = true;
+        } else if (playerClass == "Archer") {
+            player = new Archer();
+            player->setPlayerClass("Archer");
+            createClass = true;
+        } else {
+            cout << "Invalid class. Please try to type according to the box above." << endl;
+            cin.clear(); // Clear the error flag
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    }
 
     string rules;
     cout << "\nBefore we start, would you like to familiarise yourself with rules? [Yes/No]" << endl;
     cin >> rules;
 
-    if (rules == "Yes" && "yes") {
+    if (rules == "Yes" || "yes") {
         cout << "\nIn Epic Quest, your journey will take you through treacherous landscapes, from dense forests to dark dungeons and haunted ruins." << endl;
         cout << "You will encounter a variety of monsters, each with unique strengths and weaknesses. Combat will test your strategic thinking and quick reflexes as you decide the best course of action:" << endl;
         cout << "\nAttack: Strike your enemy with your weapon or spells." << endl;
@@ -26,25 +50,6 @@ void Game::startGame() {
         cout << "Inventory: Use items from your inventory to heal or gain an advantage." << endl;
         cout << "Special Ability: Unleash your hero's unique special ability for a powerful effect." << endl;
         cout << "Quit: Leave the game if you need to take a break.\n" << endl;
-    }
-
-    // Create player and monster objects based on the chosen class
-    Player* player; // Declare the player variable outside of the if-else statement
-
-    if (playerClass == "Knight") {
-        player = new Knight();
-        player->setPlayerClass("Knight");
-    } else if (playerClass == "Mage") {
-        player = new Mage();
-        player->setPlayerClass("Mage");
-    } else if (playerClass == "Archer") {
-        player = new Archer();
-        player->setPlayerClass("Archer");
-
-    } else {
-        cout << "Invalid class. Defaulting to Knight." << endl;
-        player = new Knight();
-        player->setPlayerClass("Knight");
     }
 
     double level; // Declare the level variable outside of the if-else statement

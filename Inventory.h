@@ -7,22 +7,22 @@ using namespace std;
 
 class Inventory {
 private:
-    string* items; // Dynamic array for items
-    int itemCount; // Number of items in the inventory
-    int capacity; // Capacity of the inventory
+    string* items; //dynamic array for items
+    int itemCount; //number of items in the inventory
+    int capacity; //capacity of the inventory
     int healthPotionCount;
     int skillPotionCount;
 
 public:
-    Inventory(); // Constructor
-    ~Inventory(); // Destructor
+    Inventory(); //constructor
+    ~Inventory(); //destructor
 
-    void addItem(string item); // Add an item to the inventory
-    void removeItem(string item); // Remove an item from the inventory
+    void addItem(string item); //add an item to the inventory
+    void removeItem(string item); //remove an item from the inventory
 
     void useSkillPotion(int playerSkill, int maxSkill);
-    void useHealthPotion(int playerhealth, int maxHealth); // Use a health potion
-    int printInventory(); // Print the inventory items
+    void useHealthPotion(int playerhealth, int maxHealth); //use a health potion
+    int printInventory(); //print the inventory items
     
     int getItemCount(); // Get the number of items in the inventory
     int getHealthPotionCount(); //get health potion count

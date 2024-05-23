@@ -35,14 +35,14 @@ bool Monster::isAlive() {
 } 
 
 int Monster::getLevel() {
-    return level;
+    return level; //get level of monster
 }
 
 void Monster::setLevel(int level) {
-    this->level = level;
+    this->level = level; //set level of monster
 }
 
 void Monster::print() {
-    cout << "Creating monster ..." << endl;
+    cout << "Creating monster ..." << endl; //output to show creating monster and the completion
     cout << "Monster creation complete..." << endl;
 }

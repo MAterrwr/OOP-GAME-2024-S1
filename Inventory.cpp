@@ -22,15 +22,15 @@ void Inventory::addItem(string item) {
     }
 }
 
-// Remove an item from the inventory
+//remove an item from the inventory
 void Inventory::removeItem(std::string item) {
     for (int i = 0; i < itemCount; ++i) {
         if (items[i] == item) {
-            // Shift items to fill the gap
+            //shift items to fill the gap
             for (int j = i; j < itemCount - 1; ++j) {
                 items[j] = items[j + 1];
             }
-            --itemCount; // Decrement count
+            --itemCount; //decrement count
             return;
         }
     }
@@ -54,18 +54,18 @@ void Inventory::useSkillPotion(int playerSkill, int maxSkill) {
 // Use a health potion
 void Inventory::useHealthPotion(int playerHealth, int maxHealth) {
     if (healthPotionCount > 0) {
-        playerHealth += 25; // Increase player's health by 25
+        playerHealth += 25; //increase player's health by 25
         if (playerHealth > maxHealth) {
             playerHealth = maxHealth;
         }
-        --healthPotionCount; // Decrease health potion count
+        --healthPotionCount; //decrease health potion count
         cout << "Used a health potion. Player's health increased by 25." << endl;
     } else {
         cout << "No health potion available!" << endl;
     }
 }
 
-// Print the inventory items
+//print the inventory items
 int Inventory::printInventory() {
     cout << "Inventory:" << endl;
     for (int i = 0; i < itemCount; ++i) {
@@ -74,7 +74,7 @@ int Inventory::printInventory() {
     return healthPotionCount + skillPotionCount;
 }
 
-// Get the number of items in the inventory
+//get the number of items in the inventory
 int Inventory::getItemCount() {
     return itemCount;
 }

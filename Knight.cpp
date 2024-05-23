@@ -26,9 +26,9 @@ void Knight::print() { //prints output once function member successfully initial
 }
 
 int Knight::getMaxHealth() {
-    return 125;
+    return 125; //set max health to 125 for knight
 }
 
 int Knight::getMaxSkill() {
-    return 100;
+    return 100; //set max skill to 100
 }

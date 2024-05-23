@@ -18,8 +18,8 @@ public:
     string getName() override; //getter for name
 
     void print(); //prints output once function member successfully initialised
-    int getMaxHealth() override;
-    int getMaxSkill() override;
+    int getMaxHealth() override; //override function for get max health
+    int getMaxSkill() override; //override function for get max skill
 };
 
 #endif

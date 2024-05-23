@@ -26,9 +26,9 @@ void Archer::print() { //prints output once function member successfully initial
 }
 
 int Archer::getMaxHealth() {
-    return 100;
+    return 100; //set max skill of archer to 100
 }
 
 int Archer::getMaxSkill() {
-    return 100;
+    return 100; //set max skill to 100
 }

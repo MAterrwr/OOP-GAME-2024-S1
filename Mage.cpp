@@ -26,9 +26,9 @@ void Mage::print() { //prints output once function member successfully initialis
 }
 
 int Mage::getMaxHealth() {
-    return 100;
+    return 100; //set max health of mage to 100
 }
 
 int Mage::getMaxSkill() {
-    return 100;
+    return 100; //set max skill of mage to 100
 }

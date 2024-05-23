@@ -59,6 +59,7 @@ void Game::startGame() {
             cout << "Invalid level. Please try again." << endl;
             cin.clear(); // Clear the error flag
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            
         } else {
             switch (monsterLevel) {
                 case 1:

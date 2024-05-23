@@ -125,14 +125,14 @@ void Game::play(Player& player, Monster& monster) {
             break;
 
         case 3:
-            cout << "You chose to check your inventory.\n";
+              cout << "You chose to check your inventory.\n";
                 // Code to perform inventory action
                 if (player.getInventory().printInventory() > 0) {
                 // After displaying inventory, player may choose to use a health potion
-                    cout << "Use health potion? (y/n): ";
-                    char usePotion;
-                    cin >> usePotion;
-                    if (usePotion == 'y') {
+                cout << "Use health potion (h), skill potion (s), or return with anything else. ";
+                char usePotion;
+                cin >> usePotion;
+                    if (usePotion == 'h') {
                         // Code to use health potion
                         cout << "Using health potion...\n";
                         int currentHealth = player.getHealth();
@@ -141,12 +141,15 @@ void Game::play(Player& player, Monster& monster) {
                         player.getInventory().decreaseHealthPotionCount();
                         cout << "Player used a health potion. Health increased by 25." << endl;
                         cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
-                    } else {
-                        cout << "please enter y or n. \n" << endl;
-                        continue;
+                    } else if (usePotion == 's') {
+                        cout << "Using skill potion... \n"
+                        player.getInventory()useSkillPotion(player.getSkill());
+                        cout << "Special ability fully charged!"
+                    }   else {
+                        cout << "Please enter h or s. \n"
                     }
                 } else {
-                    cout << "No health potions available, use another option \n" << endl;
+                    cout << "No potions available, use another option \n" << endl;
                     continue; //return to start of loop
                 }
 

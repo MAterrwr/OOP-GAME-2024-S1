@@ -16,6 +16,7 @@
 class Game {
 public:
     //function to start and run the game
+    void startGame();
     void play(Player& player, Monster& enemy);
 };
 

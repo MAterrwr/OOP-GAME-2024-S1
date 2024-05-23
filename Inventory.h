@@ -15,10 +15,13 @@ private:
 public:
     Inventory(); // Constructor
     ~Inventory(); // Destructor
+
     void addItem(string item); // Add an item to the inventory
     void removeItem(string item); // Remove an item from the inventory
+
     void useHealthPotion(int& playerhealth); // Use a health potion
     int printInventory(); // Print the inventory items
+    
     int getItemCount(); // Get the number of items in the inventory
     int getHealthPotionCount(); //get health potion count
     void decreaseHealthPotionCount(); //decrease the health potion count

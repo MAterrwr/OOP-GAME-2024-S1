@@ -1,4 +1,5 @@
 #include "Game.h"
+#include <limits>
 
 using namespace std;
 
@@ -28,11 +29,13 @@ void Game::play(Player& player, Monster& monster) {
 
             //validate input
             if (userAction < 1 || userAction > 5) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "Invalid input. Please try again" << endl;
             } else {
                 validInput = true;
-            }
-        }
+            } 
+        }   
 
         int min = 1;
         int max = 100;
@@ -63,13 +66,13 @@ void Game::play(Player& player, Monster& monster) {
             break;
 
         case 3:
-        cout << "You chose to check your inventory.\n";
+            cout << "You chose to check your inventory.\n";
                 // Code to perform inventory action
                 if (player.getInventory().printInventory() > 0) {
                 // After displaying inventory, player may choose to use a health potion
-                cout << "Use health potion? (y/n): ";
-                char usePotion;
-                cin >> usePotion;
+                    cout << "Use health potion? (y/n): ";
+                    char usePotion;
+                    cin >> usePotion;
                     if (usePotion == 'y') {
                         // Code to use health potion
                         cout << "Using health potion...\n";
@@ -89,7 +92,6 @@ void Game::play(Player& player, Monster& monster) {
                 }
 
                 break;
-
         case 4:
             cout << "You chose to use your special ability.\n";
             // Code to perform special ability action

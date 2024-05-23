@@ -5,13 +5,14 @@
 #include "Entity.h"
 #include "Player.h"
 
+//archer class inheriting from the player class
 class Archer : public Player {
 public:
-    Archer();
-    Archer(int health, int damage, int defense, int inventorySize, int skill);
-    int specialAttackArcher(); //unfinished
+    Archer(); //default constructor
+    Archer(int health, int damage, int defense, int inventorySize, int skill); //constructor
+    int specialAttackArcher(); //unfinished //special ability for archer
 
-    void print();
+    void print(); //print archer details
 };
 
 #endif

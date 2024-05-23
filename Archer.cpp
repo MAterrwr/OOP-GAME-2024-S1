@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Archer::Archer() {
+Archer::Archer() { //default constructor with stats
     health = 100;
     damage = 40;
     defense = 9;
@@ -10,7 +10,7 @@ Archer::Archer() {
     skill = 0;
 }
 
-Archer::Archer(int health, int damage, int defense, int inventorySize, int skill) {
+Archer::Archer(int health, int damage, int defense, int inventorySize, int skill) { //constructor to set stats
     this->health = health;
     this->damage = damage;
     this->defense = defense;
@@ -18,7 +18,7 @@ Archer::Archer(int health, int damage, int defense, int inventorySize, int skill
     this->skill = skill;
 }
 
-int Archer::specialAttackArcher() {
+int Archer::specialAttackArcher() { //special attack for the archer which increases the defense
     return defense = 14;
 }
 

@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
-
+//including the header files needed
 #include "Entity.h"
 #include "Player.h"
 #include "Monster.h"
@@ -13,6 +13,7 @@
 
 class Game {
 public:
+    //function to start and run the game
     void play(Player& player, Monster& enemy);
 };
 

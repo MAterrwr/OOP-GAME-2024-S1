@@ -30,16 +30,16 @@ void Player::takeDamage(int Damage) {
     if (actualDamage < 0) {
         actualDamage = 0; //ensure damage is not negative
     }
-    health -= actualDamage;
+    health -= actualDamage;  //reduce health
 
     if (health < 0) {
-        health = 0;
+        health = 0; //ensure health does not go below zero
     }
 }
 
 bool Player::isAlive(){
     if (health > 0) {
-        return true;
+        return true; //player is alive if health is greater than 0
     } else {
             return false;
         }

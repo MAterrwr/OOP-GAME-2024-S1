@@ -11,6 +11,7 @@ void Game::startGame() {
     cout << "Enter your class (Knight, Mage, Archer): ";
     cin >> playerClass;
 
+
     // Create player and monster objects based on the chosen class
     Player* player; // Declare the player variable outside of the if-else statement
 
@@ -24,9 +25,29 @@ void Game::startGame() {
         cout << "Invalid class. Defaulting to Knight." << endl;
         player = new Knight();
     }
+    string monsterLevel;
+    cout << "Enter the monster level (1-5): ";
+    cin >> monsterLevel;
 
-    // Create a monster object
-    Monster monster(100, 10, 0, 1);
+    int level; // Declare the level variable outside of the if-else statement
+
+    if (monsterLevel == "1") {
+        level = 1;
+    } else if (monsterLevel == "2") {
+        level = 1.25;
+    } else if (monsterLevel == "3") {
+        level = 1.5;
+    } else if (monsterLevel == "4") {
+        level = 1.75;
+    } else if (monsterLevel == "5") {
+        level = 2;
+    } else {
+        cout << "Invalid level. Defaulting to level 1." << endl;
+        level = 1; // Assign a default value to level
+    }
+
+    Monster monster(100, 10, 0, level); // Create the monster object with the correct level
+
 
     // Start the game loop
     play(*player, monster);

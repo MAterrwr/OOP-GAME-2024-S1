@@ -79,6 +79,9 @@ void Game::play(Player& player, Monster& monster) {
             cout << "3. for inventory\n";
             cout << "4. for special ability\n";
             cout << "5. to quit the game\n" << endl;
+            cout << "\n";
+            cout << "[         ]"<< endl;
+                
             cin >> userAction;
 
             //validate input
@@ -104,6 +107,7 @@ void Game::play(Player& player, Monster& monster) {
             monster.takeDamage(P_damage); //player attacks monster
             cout << P_name <<" dealt " << P_damage << " damage to the monster\n" << endl;
             cout << "Monster's remaining health: " << monster.getHealth() << endl;
+            player.setSkill_meter(player.getSkill_meter() + 20); //increase skill meter
             break;
 
         case 2: 
@@ -116,6 +120,7 @@ void Game::play(Player& player, Monster& monster) {
             } else {
                 cout << "Player has successfully block the incoming attack" << endl;
                 P_block = true;
+                player.setSkill_meter(player.getSkill_meter() + 35); //increase skill meter
             }
             break;
 

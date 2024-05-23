@@ -29,7 +29,7 @@ void Game::startGame() {
     cout << "Enter the monster level (1-5): ";
     cin >> monsterLevel;
 
-    int level; // Declare the level variable outside of the if-else statement
+    double level; // Declare the level variable outside of the if-else statement
 
     if (monsterLevel == "1") {
         level = 1;

@@ -13,8 +13,8 @@
 int main (){
     system("cls"); // clears all values
     system("clear"); // clears the terminal
-    UnitTest test;
-    test.runTests();
+    UnitTest test; //create an instance of unit test
+    test.runTests(); //run all tests with defined values 
 
     return 0;
 }

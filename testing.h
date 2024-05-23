@@ -8,61 +8,61 @@
 #include "Mage.h"
 #include "Archer.h"
 #include <cassert>
-
+//include all classes to test
 using namespace std;
 
 class UnitTest{
     public:
     void runTests(){
-        testPlayer();
-        testMonster();
-        testKnight();
-        testMage();
-        testArcher();
+        testPlayer(); //test player
+        testMonster(); //test monster
+        testKnight(); //test knight
+        testMage(); //test mage
+        testArcher(); //test archer
     }
     private:
-    void testPlayer(){
-        Player player(100,10,0);
-        assert(player.getHealth() == 100);
+    void testPlayer(){ //test for player
+        Player player(100,10,0); //initialise with specific stats
+        assert(player.getHealth() == 100); //check if health damage and defese is correct
         assert(player.getDamage() == 10);
         assert(player.getDefense() == 0);
-        cout << "Player tests passed" << endl;
+        cout << "Player tests passed" << endl; //if correct display test passed
     }
 
-    void testMonster(){
-        Monster monster(100, 10, 0, 1);
-        assert(monster.getHealth() == 100);
+    void testMonster(){ //test for monster
+        Monster monster(100, 10, 0, 1); //initialise with specific stats
+        assert(monster.getHealth() == 100); //check if stats are correct
         assert(monster.getDamage() == 10);
         assert(monster.getDefense() == 0);
         assert(monster.getLevel() == 1);
-        cout << "Monster tests passed" << endl;
-    }
+        cout << "Monster tests passed" << endl; //print if test passed
+    } 
 
-    void testKnight(){
-        Knight knight;
-        assert(knight.getHealth() == 125);
+    void testKnight(){ //test for knight
+        Knight knight; //initialise with default constructor
+        assert(knight.getHealth() == 125); //check if stats are initialised correctly
         assert(knight.getDamage() == 30);
         assert(knight.getDefense() == 14);
         assert(knight.getSkill_meter() == 0);
-        cout << "Knight tests passed" << endl;
+        cout << "Knight tests passed" << endl; //print if test passed
     }
 
-    void testMage(){
-        Mage mage;
-        assert(mage.getHealth() == 100);
+    void testMage(){ //test for mage
+        Mage mage; //initialise with default constructor
+        assert(mage.getHealth() == 100); //check if stats initialised correctly
         assert(mage.getDamage() == 20);
         assert(mage.getDefense() == 11);
         assert(mage.getSkill_meter() == 0);
-        cout << "Mage tests passed" << endl;
+        cout << "Mage tests passed" << endl; //print if test passed
     }
 
-    void testArcher(){
-        Archer archer;
-        assert(archer.getHealth() == 100);
+    void testArcher(){ //test for archer
+        Archer archer; //initialise with default constructor
+        assert(archer.getHealth() == 100); //check if stats initialised correctly
         assert(archer.getDamage() == 40);
         assert(archer.getDefense() == 9);
         assert(archer.getSkill_meter() == 0);
-        cout << "Archer tests passed" << endl;
+        cout << "Archer tests passed" << endl; //print if test passed
     }
 
 };

@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Entity.h"
 #include "Inventory.h"
+
 using namespace std;
 
 //player class inherting from entity
@@ -11,11 +12,13 @@ class Player : public Entity {
 protected:
     Inventory* inventory; //pointer to dynamically allocated array for inventory
     int skill_meter; //skill meter of the player
+    string name;
 public:
     Player(); //default construct
     Player(int health, int damage, int defense); //constructor
     ~Player();
 
+    virtual string getName();
     void takeDamage(int Damage); //method to take damage, reducing health based on sefense
     bool isAlive(); // method to check if player is alive
 

@@ -3,7 +3,7 @@
 using namespace std;
 
 Knight::Knight() {
-    name = "Archer";
+    name = "Knight";
     health = 125; //set default stats
     damage = 30;
     defense = 14;
@@ -22,6 +22,8 @@ Knight::Knight(string name, int health, int damage, int defense) {
 /*void Knight::cast_skill() {
     return damage * 2; //returns double the damage
 }*/
+
+string Knight::getName() {return name;}
 
 void Knight::print() {
     cout << "Knight creation complete\n" << endl;

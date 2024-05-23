@@ -16,6 +16,7 @@ public:
     Archer(); //default constructor
     Archer(string name, int health, int damage, int defense); //constructor
     /*void cast_skill();*/ //unfinished //special ability for archer
+    string getName();
 
     void print(); //print archer details
 };

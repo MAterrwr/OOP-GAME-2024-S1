@@ -10,9 +10,6 @@
 
 //main function for the game to run
 int main (){
-    system("cls"); // clears all values
-    system("clear"); // clears the terminal
-    
     Game game;
     game.startGame();
 

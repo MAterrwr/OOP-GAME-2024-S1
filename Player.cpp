@@ -48,6 +48,8 @@ Inventory& Player::getInventory() {
     return *inventory; //get inventory and return
 }
 
+string Player::getName() {return name;}
+
 void Player::print() {
     cout << "Creating player ..." << endl;
 }

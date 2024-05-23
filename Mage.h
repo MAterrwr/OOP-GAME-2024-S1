@@ -16,6 +16,7 @@ public:
     Mage(); //default constructor
     Mage(string name, int health, int damage, int defense); //constructor
     /*void cast_skill(); //method for mages special attack */
+    string getName();
 
     void print(); //method to print mages details
 };

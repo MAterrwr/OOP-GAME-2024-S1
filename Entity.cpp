@@ -38,6 +38,12 @@ void Entity::setDefense(int defense) { //setter for defense
     this->defense = defense;
 }
 
+bool Entity::isAlive() {return 0;}
+
+void Entity::takeDamage(int Damage) {
+    health -= Damage;
+}
+
 void Entity::print() {
     cout << "Making an entity" << endl; //print function to display entity creation
 }

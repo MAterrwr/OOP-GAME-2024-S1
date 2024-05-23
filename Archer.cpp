@@ -23,6 +23,8 @@ Archer::Archer(string name, int health, int damage, int defense) { //constructor
     return defense = 14;
 }*/
 
+string Archer::getName() {return name;}
+
 void Archer::print() {
-    cout << "Making an entity\n" << endl;
+    cout << "Archer creation complete\n" << endl;
 }

@@ -12,8 +12,8 @@ protected:
 public:
     Entity(); //default constructor
     Entity(int health, int damage, int defense); //constructor
-    virtual bool isAlive() = 0; // pure virtual function showing polymorphism
-    virtual void takeDamage(int Damage) = 0;
+    virtual bool isAlive(); // pure virtual function showing polymorphism
+    virtual void takeDamage(int Damage);
 
     int getHealth(); //getters for the attributes of entity
     int getDamage();

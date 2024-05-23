@@ -23,9 +23,9 @@ Knight::Knight(string name, int health, int damage, int defense) {
     return damage * 2; //returns double the damage
 }*/
 
-string Knight::getName() {return name;}
+string Knight::getName() {return name;} //getter for name
 
-void Knight::print() {
+void Knight::print() { //prints output once function member successfully initialised
     cout << "Knight creation complete\n" << endl;
 }
 

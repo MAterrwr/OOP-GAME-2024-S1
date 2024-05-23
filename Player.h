@@ -12,13 +12,13 @@ class Player : public Entity {
 protected:
     Inventory* inventory; //pointer to dynamically allocated array for inventory
     int skill_meter; //skill meter of the player
-    string name;
+    string name; //name of character
 public:
     Player(); //default construct
     Player(int health, int damage, int defense); //constructor
-    ~Player();
+    ~Player(); //default destructor
 
-    virtual string getName();
+    virtual string getName(); //getter for name of character for polymorphism
     void takeDamage(int Damage); //method to take damage, reducing health based on sefense
     bool isAlive(); // method to check if player is alive
 

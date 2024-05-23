@@ -24,8 +24,8 @@ Mage::Mage(string name, int health, int damage, int defense) {
     cout << "Mage has cast a skill" << damage << endl; //returns double the damage
 } */
 
-string Mage::getName() {return name;}
+string Mage::getName() {return name;} //getter for name
 
-void Mage::print() {
-    cout << "Mage creation complete\n" << endl;
+void Mage::print() { //prints output once function member successfully initialised
+    cout << "Mage creation complete\n" << endl; 
 }

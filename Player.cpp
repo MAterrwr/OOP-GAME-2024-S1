@@ -15,7 +15,7 @@ void Player::setInventorySize(int size) {
     inventory = new Inventory[size]; // create new inventory with given size
 }
 
-int Player::getInventorySize() {
+int Player::getInventorySize() { //getter for current inventory size
     return inventory->getItemCount();
 }
 
@@ -36,11 +36,11 @@ bool Player::isAlive(){
     return health > 0; //determine if player is alive
 }
 
-int Player::getSkill_meter() {
+int Player::getSkill_meter() { //getter for skill meter
     return skill_meter;
 }
 
-void Player::setSkill_meter(int skill) {
+void Player::setSkill_meter(int skill) { //setter for skill meter
     this->skill_meter = skill;
 }
 
@@ -48,8 +48,8 @@ Inventory& Player::getInventory() {
     return *inventory; //get inventory and return
 }
 
-string Player::getName() {return name;}
+string Player::getName() {return name;} //getter for name of character
 
-void Player::print() {
+void Player::print() { //print output once constructor successfully initialised
     cout << "Creating player ..." << endl;
 }

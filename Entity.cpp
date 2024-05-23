@@ -38,9 +38,9 @@ void Entity::setDefense(int defense) { //setter for defense
     this->defense = defense;
 }
 
-bool Entity::isAlive() {return 0;}
+bool Entity::isAlive() {return 0;} //initialised polymorphism
 
-void Entity::takeDamage(int Damage) {
+void Entity::takeDamage(int Damage) { //initialised polymorphism
     health -= Damage;
 }
 

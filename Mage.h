@@ -11,14 +11,14 @@ using namespace std;
 //mage class inherits from player
 class Mage : public Player {
 private:
-    string name;
+    string name; //name of character
 public:
     Mage(); //default constructor
     Mage(string name, int health, int damage, int defense); //constructor
     /*void cast_skill(); //method for mages special attack */
-    string getName();
+    string getName(); //getter for name
 
-    void print(); //method to print mages details
+    void print(); //prints output once function member successfully initialised
 };
 
 #endif

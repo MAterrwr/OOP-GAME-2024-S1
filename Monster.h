@@ -1,11 +1,15 @@
 #ifndef MONSTER_H
 #define MONSTER_H
+<<<<<<< Updated upstream
 
 #include <iostream> 
+=======
+>>>>>>> Stashed changes
 #include "Entity.h"
 
 class Monster : public Entity {
 protected:
+<<<<<<< Updated upstream
     int level; //Level of the monster, affects the health, daamage and defence
 public:
     Monster(); //Default constructor
@@ -19,4 +23,18 @@ public:
     void print(); //Method to print the monsters details
 };
 
+=======
+    int level;
+public:
+    Monster();
+    Monster(int health, int damage, int defense, int level);
+    void takeDamage(int Damage);
+    bool isAlive();
+
+    void attack(Entity* entity);
+
+    int getLevel();
+    void setLevel(int level);
+};
+>>>>>>> Stashed changes
 #endif

@@ -1,6 +1,7 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+<<<<<<< Updated upstream
 #include <iostream>
 
 //base class for all entities in the game
@@ -24,5 +25,27 @@ public:
     void setDefense(int defense);
 
     void print(); //function to print entity details
+=======
+class Entity{
+protected:
+    int health;
+    int damage;
+    int defense;
+public:
+    Entity();
+    Entity(int health, int damage, int defense);
+    virtual bool isAlive();
+    virtual void takeDamage(int Damage);
+    virtual ~Entity(); 
+
+    int getHealth();
+    int getDamage();
+    int getDefense();
+
+    void setHealth(int health);
+    void setDamage(int damage);
+    void setDefense(int defense);
+
+>>>>>>> Stashed changes
 };
 #endif 

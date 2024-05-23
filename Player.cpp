@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #include "Player.h"
 
 using namespace std;
@@ -24,6 +25,39 @@ void Player::takeDamage(int Damage) {
     
     if (actualDamage < 0) {
         actualDamage = 0; //ensure damage is not negative
+=======
+#include <iostream>
+#include "Entity.h"
+#include "Player.h"
+
+Player::Player() : Entity(), inventory(nullptr), inventorySize(0)
+{
+    inventorySize = 0;
+    skill = 0;
+}
+
+Player::Player(int health, int damage, int defense, int inventorySize, int skill) : Entity(health, damage, defense)
+{
+    this->inventorySize = inventorySize;
+    this->skill = skill;    
+}
+
+void Player::setInventorySize(int size) {
+    delete[] inventory; // delete old inventory
+    inventory = new int[size]; // create new inventory with given size
+    inventorySize = size; // set inventory size
+}
+
+int Player::getInventorySize() {
+    return inventorySize;
+}
+
+void Player::takeDamage(int Damage) {
+    int actualDamage = Damage - defense;
+    
+    if (actualDamage < 0) {
+        actualDamage = 0;
+>>>>>>> Stashed changes
     }
     health -= actualDamage;
 
@@ -33,6 +67,7 @@ void Player::takeDamage(int Damage) {
 }
 
 bool Player::isAlive(){
+<<<<<<< Updated upstream
     return health > 0; //determine if player is alive
 }
 
@@ -53,3 +88,43 @@ string Player::getName() {return name;} //getter for name of character
 void Player::print() { //print output once constructor successfully initialised
     cout << "Creating player ..." << endl;
 }
+=======
+    if (health > 0) {
+        return true;
+    } else {
+            return false;
+        }
+}
+
+int Player::getSkill() {
+    return skill;
+}
+
+void Player::setSkill(int skill) {
+    this->skill = skill;
+}
+
+int Player::getDamage() {
+    return damage;
+}
+
+void Player::attack(Entity* entity) {
+    entity->takeDamage(damage);
+    skill++;
+}
+
+void Player::defend() {
+    defense += 5;
+}
+
+void Player::useSpecialAbility(Monster& monster) {
+    if (skill >= 5 && health > 2) {
+        monster.takeDamage(damage * 2);
+        skill = 0;
+    } else {
+        std::cout << "You don't have enough skill to use your special ability.\n";
+    }
+}
+
+
+>>>>>>> Stashed changes

@@ -1,5 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+<<<<<<< Updated upstream
 
 #include <iostream>
 #include "Entity.h"
@@ -31,6 +32,34 @@ public:
 
     Inventory& getInventory(); //getter for inventory
     void print(); //print players details
+=======
+#include "Entity.h"
+#include "Monster.h"
+
+class Player : public Entity {
+protected:
+    int* inventory;
+    int inventorySize; 
+    int skill;
+public:
+    Player();
+    Player(int health, int damage, int defense, int inventorySize, int skill);
+    void takeDamage(int Damage); 
+    bool isAlive();
+
+    int getDamage();
+
+    void attack(Entity* entity);
+    void defend();
+    void useSpecialAbility(Monster& monster);
+
+
+    int getInventorySize();
+    void setInventorySize(int inventorySize);
+
+    int getSkill();
+    void setSkill(int skill); 
+>>>>>>> Stashed changes
 };
 #endif
 

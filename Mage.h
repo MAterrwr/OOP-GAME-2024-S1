@@ -16,9 +16,10 @@ public:
     Mage(); //default constructor
     Mage(string name, int health, int damage, int defense); //constructor
     /*void cast_skill(); //method for mages special attack */
-    string getName(); //getter for name
+    string getName() override; //getter for name
 
     void print(); //prints output once function member successfully initialised
+    int getMaxHealth() override;
 };
 
 #endif

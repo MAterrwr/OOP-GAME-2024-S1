@@ -29,3 +29,7 @@ string Mage::getName() {return name;} //getter for name
 void Mage::print() { //prints output once function member successfully initialised
     cout << "Mage creation complete\n" << endl; 
 }
+
+int Mage::getMaxHealth() {
+    return 100;
+}

@@ -93,7 +93,7 @@ void Game::startGame() {
     play(*player, monster);
 
     // Clean up dynamically allocated memory
-    delete player;
+    delete [] player;
 }
 
 //the play function manages the game loop and player to monster interaction
@@ -166,6 +166,7 @@ void Game::play(Player& player, Monster& monster) {
             break;
 
         case 3:
+<<<<<<< Updated upstream
               cout << "You chose to check your inventory.\n\n";
                 // Code to perform inventory action
                 if (player.getInventory().printInventory() > 0) {
@@ -173,27 +174,31 @@ void Game::play(Player& player, Monster& monster) {
                 cout << "\nUse health potion (h), skill potion (s), or return with anything else. ";
                 char usePotion;
                 cin >> usePotion;
+=======
+               cout << "You chose to check your inventory.\n";
+                // Code to perform inventory action
+                if (player.getInventory().printInventory() > 0) {
+                    // After displaying inventory, player may choose to use a health potion
+                    cout << "Use health potion (h), skill potion (s), or return with anything else. \n";
+                    char usePotion;
+                    cin >> usePotion;
+>>>>>>> Stashed changes
                     if (usePotion == 'h') {
                         // Code to use health potion
                         cout << "Using health potion...\n";
-                        int currentHealth = player.getHealth();
-                        int newHealth = currentHealth + 25;
-                        player.setHealth(newHealth); //create a new health after the health potion is used
-                        player.getInventory().decreaseHealthPotionCount();
-                        cout << "Player used a health potion. Health increased by 25." << endl;
-                        cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
+                        player.getInventory().useHealthPotion(player.getHealth(), player.getMaxHealth());
+                        cout << "New health: " << player.getHealth() << "\n" << endl; // Display new health
                     } else if (usePotion == 's') {
                         cout << "Using skill potion... \n" << endl;
-                        //player.getInventory().useSkillPotion(player.getSkill_meter());
+                        player.getInventory().useSkillPotion(player.getSkill_meter());
                         cout << "Special ability fully charged!" << endl;
-                    }   else {
-                        cout << "Please enter h or s. \n" <<endl;
+                    } else {
+                        cout << "Invalid input. Returning to the game.\n" << endl;
                     }
                 } else {
                     cout << "No potions available, use another option \n" << endl;
-                    continue; //return to start of loop
+                    continue; // Return to start of loop
                 }
-
                 break;
         case 4:
             cout << "You chose to use your special ability.\n";

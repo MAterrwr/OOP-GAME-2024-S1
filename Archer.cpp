@@ -28,3 +28,7 @@ string Archer::getName() {return name;} //getter for name
 void Archer::print() { //prints output once function member successfully initialised
     cout << "Archer creation complete\n" << endl;
 }
+
+int Archer::getMaxHealth() {
+    return 100;
+}

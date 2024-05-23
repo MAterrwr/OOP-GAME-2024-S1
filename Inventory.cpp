@@ -37,7 +37,7 @@ void Inventory::removeItem(std::string item) {
     std::cout << "Item not found!" << std::endl;
 }
 
-/*void Inventory::useSkillPotion(int& playerSkill) {
+void Inventory::useSkillPotion(int playerSkill) {
     //add skill code
     if(skillPotionCount > 0) {
         playerSkill += 0;//determine what to do with skill
@@ -46,10 +46,10 @@ void Inventory::removeItem(std::string item) {
     } else {
         cout << "No skill potion available" << endl;
     }
-} */
+} 
 
 // Use a health potion
-void Inventory::useHealthPotion(int& playerHealth, int maxHealth) {
+void Inventory::useHealthPotion(int playerHealth, int maxHealth) {
     if (healthPotionCount > 0) {
         playerHealth += 25; // Increase player's health by 25
         if (playerHealth > maxHealth) {

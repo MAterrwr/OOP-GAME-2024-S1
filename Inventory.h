@@ -28,8 +28,8 @@ public:
     int getHealthPotionCount(); //get health potion count
     void decreaseHealthPotionCount(); //decrease the health potion count
 
-    int getSkillPotionCount();
-    void decreaseSkillPotionCount();
+    int getSkillPotionCount(); //get skill potion count
+    void decreaseSkillPotionCount(); //decrease skill potion count
 };
 
 #endif

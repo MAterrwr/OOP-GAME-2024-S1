@@ -54,6 +54,18 @@ Inventory& Player::getInventory() {
     return *inventory; //get inventory and return
 }
 
+
+Player::Player(const std::string& playerClass) : playerClass(playerClass) {}
+
+string Player::getPlayerClass() const {
+    return playerClass;
+}
+
+void Player::setPlayerClass(const std::string& playerClass) {
+    this->playerClass = playerClass;
+}
+
+
 string Player::getName() {return name;} //getter for name of character
 
 void Player::print() { //print output once constructor successfully initialised

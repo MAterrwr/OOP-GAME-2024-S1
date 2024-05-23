@@ -17,13 +17,18 @@ void Game::startGame() {
 
     if (playerClass == "Knight") {
         player = new Knight();
+        player->setPlayerClass("Knight");
     } else if (playerClass == "Mage") {
         player = new Mage();
+        player->setPlayerClass("Mage");
     } else if (playerClass == "Archer") {
         player = new Archer();
+        player->setPlayerClass("Archer");
+
     } else {
         cout << "Invalid class. Defaulting to Knight." << endl;
         player = new Knight();
+        player->setPlayerClass("Knight");
     }
     string monsterLevel;
     cout << "Enter the monster level (1-5): ";
@@ -157,6 +162,21 @@ void Game::play(Player& player, Monster& monster) {
         case 4:
             cout << "You chose to use your special ability.\n";
             // Code to perform special ability action
+            if (player.getSkill_meter() == 100 || player.getSkill_meter() > 100) {
+                if (player.getPlayerClass() == "Knight") {
+                    cout << "Knight used special ability. Defense increased to 20." << endl;
+                    player.setSkill_meter(0);
+                } else if (player.getPlayerClass() == "Mage") {
+                    cout << "Mage used special ability. Damage increased to 30." << endl;
+                    player.setSkill_meter(0);
+                } else if (player.getPlayerClass() == "Archer") {
+                    cout << "Archer used special ability. Defense increased to 14." << endl;
+                    player.setSkill_meter(0);
+                }
+            }
+            else {
+                cout << "Special ability not charged yet. Continue playing to charge it." << endl;
+            }
             break;   
 
         case 5:

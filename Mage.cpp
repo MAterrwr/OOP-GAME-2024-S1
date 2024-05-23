@@ -3,13 +3,16 @@
 using namespace std;
 
 Mage::Mage() {
+    name = "Archer";
     health = 100; //set defualt health damage defense inventory and skill
     damage = 20;
     defense = 11;
     skill_meter = 0;
+    print();
 }
 
-Mage::Mage(int health, int damage, int defense) {
+Mage::Mage(string name, int health, int damage, int defense) {
+    this->name = name;
     this->health = health; //set health damage defense inventory and skill
     this->damage = damage;
     this->defense = defense;
@@ -22,5 +25,5 @@ Mage::Mage(int health, int damage, int defense) {
 } */
 
 void Mage::print() {
-    cout << "Mage creation complete" << endl;
+    cout << "Mage creation complete\n" << endl;
 }

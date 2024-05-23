@@ -4,42 +4,39 @@
 using namespace std;
 
 void Game::startGame() {
+    system("cls"); // clears all values
+    system("clear"); // clears the terminal
     // Ask the user for their preferred class
     string playerClass;
     cout << "Enter your class (Knight, Mage, Archer): ";
-    getline(cin, playerClass);
+    cin >> playerClass;
 
     // Create player and monster objects based on the chosen class
     Player* player; // Declare the player variable outside of the if-else statement
 
     if (playerClass == "Knight") {
-        Knight knightPlayer; // Create a Knight object
-        player = &knightPlayer; // Assign the address of the Knight object to the player variable
+        player = new Knight();
     } else if (playerClass == "Mage") {
-        Mage magePlayer; // Create a Mage object
-        player = &magePlayer; // Assign the address of the Mage object to the player variable
+        player = new Mage();
     } else if (playerClass == "Archer") {
-        Archer archerPlayer; // Create an Archer object
-        player = &archerPlayer; // Assign the address of the Archer object to the player variable
+        player = new Archer();
     } else {
-        cout << "Invalid class. Defaulting to Knight." << std::endl;
-        Knight defaultPlayer; // Create a default Knight object
-        player = &defaultPlayer; // Assign the address of the default Knight object to the player variable
+        cout << "Invalid class. Defaulting to Knight." << endl;
+        player = new Knight();
     }
 
-    player->print(); // Use the -> operator to access the print() function of the player object
+    // Create a monster object
+    Monster monster(100, 10, 0, 1);
 
-    Monster monster(70, 10, 5, 1);
-    monster.print();
+    // Start the game loop
+    play(*player, monster);
 
-    // Run the game
-    play(*player, monster); // Change the parameter type from Player& to Player*
+    // Clean up dynamically allocated memory
+    delete player;
 }
 
 //the play function manages the game loop and player to monster interaction
 void Game::play(Player& player, Monster& monster) {
-    system("cls"); // clears all values
-    system("clear"); // clears the terminal
     while (player.isAlive() && monster.isAlive()) { //continue the game loop as long as both the player and the monster are alive
         int P_damage = player.getDamage(); //players damage
         int M_damage = monster.getDamage(); //monsters damage

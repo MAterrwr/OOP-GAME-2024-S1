@@ -3,13 +3,16 @@
 using namespace std;
 
 Knight::Knight() {
+    name = "Archer";
     health = 125; //set default stats
     damage = 30;
     defense = 14;
     skill_meter = 0;
+    print();
 }
 
-Knight::Knight(int health, int damage, int defense) {
+Knight::Knight(string name, int health, int damage, int defense) {
+    this->name = name;
     this->health = health; //set stats
     this->damage = damage;
     this->defense = defense;
@@ -21,6 +24,6 @@ Knight::Knight(int health, int damage, int defense) {
 }*/
 
 void Knight::print() {
-    cout << "Knight creation complete" << endl;
+    cout << "Knight creation complete\n" << endl;
 }
 

@@ -2,14 +2,19 @@
 #define ARCHER_H
 
 #include <iostream> 
+#include <string>
 #include "Entity.h"
 #include "Player.h"
 
+using namespace std;
+
 //archer class inheriting from the player class
 class Archer : public Player {
+private:
+    string name;
 public:
     Archer(); //default constructor
-    Archer(int health, int damage, int defense); //constructor
+    Archer(string name, int health, int damage, int defense); //constructor
     /*void cast_skill();*/ //unfinished //special ability for archer
 
     void print(); //print archer details

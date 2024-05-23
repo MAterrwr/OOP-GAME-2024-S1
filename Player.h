@@ -24,7 +24,7 @@ public:
     
     int getSkill_meter(); //getter for skill meter
     void setSkill_meter(int skill); //setter for skill meter
-    virtual void skill() = 0; //pure virtual function of skill
+    /*virtual void cast_skill() = 0; //pure virtual function of skill */
 
     Inventory& getInventory(); //getter for inventory
     void print(); //print players details

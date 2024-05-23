@@ -16,9 +16,10 @@ Mage::Mage(int health, int damage, int defense) {
     skill_meter = 0;
 }
 
-void Mage::skill(); {
-    return damage * 2; //returns double the damage
-}
+/* void Mage::cast_skill(); { 
+    int damage = 0;
+    cout << "Mage has cast a skill" << damage << endl; //returns double the damage
+} */
 
 void Mage::print() {
     cout << "Mage creation complete" << endl;

@@ -16,9 +16,9 @@ Knight::Knight(int health, int damage, int defense) {
     skill_meter = 0;
 }
 
-void Knight::skill() {
+/*void Knight::cast_skill() {
     return damage * 2; //returns double the damage
-}
+}*/
 
 void Knight::print() {
     cout << "Knight creation complete" << endl;

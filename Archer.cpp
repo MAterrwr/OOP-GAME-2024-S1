@@ -16,9 +16,9 @@ Archer::Archer(int health, int damage, int defense) { //constructor to set stats
     skill_meter = 0;
 }
 
-void Archer::skill() { //special attack for the archer which increases the defense
+/*void Archer::cast_skill() { //special attack for the archer which increases the defense
     return defense = 14;
-}
+}*/
 
 void Archer::print() {
     cout << "Making an entity" << endl;

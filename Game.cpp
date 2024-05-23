@@ -1,10 +1,12 @@
 #include "Game.h"
-#include <limits>
+
 
 using namespace std;
 
 //the play function manages the game loop and player to monster interaction
 void Game::play(Player& player, Monster& monster) {
+    system("cls"); // clears all values
+    system("clear"); // clears the terminal
     while (player.isAlive() && monster.isAlive()) { //continue the game loop as long as both the player and the monster are alive
         int P_damage = player.getDamage(); //players damage
         int M_damage = monster.getDamage(); //monsters damage

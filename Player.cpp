@@ -4,7 +4,7 @@ using namespace std;
 
 Player::Player() : Entity(), inventory(new Inventory()) {}
 
-Player::Player(int health, int damage, int defense, int skill) : Entity(health, damage, defense), inventory(new Inventory()), skill(skill) {}
+Player::Player(int health, int damage, int defense) : Entity(health, damage, defense), inventory(new Inventory()), skill_meter(0) {}
 
 Player::~Player() {
     delete inventory; // Free the memory allocated for the inventory
@@ -36,12 +36,12 @@ bool Player::isAlive(){
     return health > 0; //determine if player is alive
 }
 
-int Player::getSkill() {
-    return skill;
+int Player::getSkill_meter() {
+    return skill_meter;
 }
 
-void Player::setSkill(int skill) {
-    this->skill = skill;
+void Player::setSkill_meter(int skill) {
+    this->skill_meter = skill;
 }
 
 Inventory& Player::getInventory() {

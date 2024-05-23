@@ -6,17 +6,17 @@ Archer::Archer() { //default constructor with stats
     health = 100;
     damage = 40;
     defense = 9;
-    skill = 0;
+    skill_meter = 0;
 }
 
-Archer::Archer(int health, int damage, int defense, int skill) { //constructor to set stats
+Archer::Archer(int health, int damage, int defense) { //constructor to set stats
     this->health = health;
     this->damage = damage;
     this->defense = defense;
-    this->skill = skill;
+    skill_meter = 0;
 }
 
-int Archer::specialAttackArcher() { //special attack for the archer which increases the defense
+void Archer::skill() { //special attack for the archer which increases the defense
     return defense = 14;
 }
 

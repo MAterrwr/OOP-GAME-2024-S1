@@ -9,8 +9,8 @@
 class Knight : public Player {
 public:
     Knight(); //defualt constructor
-    Knight(int health, int damage, int defense, int skill); //constructor
-    int specialKnightAttack(); //method for knight special attack
+    Knight(int health, int damage, int defense); //constructor
+    void skill(); //method for knight special attack
 
     void print(); //print knights details
 };

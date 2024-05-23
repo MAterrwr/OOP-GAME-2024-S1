@@ -6,17 +6,17 @@ Mage::Mage() {
     health = 100; //set defualt health damage defense inventory and skill
     damage = 20;
     defense = 11;
-    skill = 0;
+    skill_meter = 0;
 }
 
-Mage::Mage(int health, int damage, int defense, int skill) {
+Mage::Mage(int health, int damage, int defense) {
     this->health = health; //set health damage defense inventory and skill
     this->damage = damage;
     this->defense = defense;
-    this->skill = skill;
+    skill_meter = 0;
 }
 
-int Mage::specialAttackMage() {
+void Mage::skill(); {
     return damage * 2; //returns double the damage
 }
 

@@ -9,8 +9,8 @@
 class Mage : public Player {
 public:
     Mage(); //default constructor
-    Mage(int health, int damage, int defense, int skill); //constructor
-    int specialAttackMage(); //method for mages special attack
+    Mage(int health, int damage, int defense); //constructor
+    void skill(); //method for mages special attack
 
     void print(); //method to print mages details
 };

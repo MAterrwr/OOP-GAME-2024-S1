@@ -40,11 +40,7 @@ void Inventory::removeItem(std::string item) {
 void Inventory::useSkillPotion(int& playerSkill) {
     //add skill code
     if(skillPotionCount > 0) {
-<<<<<<< Updated upstream
-        player.setSkill_meter += 0;//determine what to do with skill
-=======
         playerSkill += 0;//determine what to do with skill
->>>>>>> Stashed changes
         --skillPotionCount; //decrease skill potion amount
         cout << "Used a skill potion, Special ablity fully charged!" <<endl;
     } else {
@@ -55,7 +51,7 @@ void Inventory::useSkillPotion(int& playerSkill) {
 // Use a health potion
 void Inventory::useHealthPotion(int& playerHealth) {
     if (healthPotionCount > 0) {
-        playerHealth += 25; // Increase player's health by 50
+        playerHealth += 25; // Increase player's health by 25
         --healthPotionCount; // Decrease health potion count
         cout << "Used a health potion. Player's health increased by 50." << endl;
     } else {

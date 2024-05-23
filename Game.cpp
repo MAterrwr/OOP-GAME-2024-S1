@@ -103,17 +103,16 @@ void Game::play(Player& player, Monster& monster) {
         switch (userAction)
         {
         case 1:
-            cout << "You chose to attack.\n";
+            cout << "\nYou chose to attack.\n";
             monster.takeDamage(P_damage); //player attacks monster
             cout << P_name <<" dealt " << P_damage << " damage to the monster\n" << endl;
-            cout << "Monster's remaining health: " << monster.getHealth() << endl;
+            cout << "Monster's remaining health: " << monster.getHealth() << endl << endl;
             player.setSkill_meter(player.getSkill_meter() + 20); //increase skill meter
             break;
 
         case 2: 
             cout << "You chose to defend.\n";
             // Code to perform defend action
-            cout << random_number << endl;
             if (random_number < 40) {
                 cout << "Player failed to block incoming attack" << endl;
                 P_block = false;
@@ -177,11 +176,11 @@ void Game::play(Player& player, Monster& monster) {
         if (P_block) {
             player.takeDamage(M_damage);
             cout << P_name << " received " << M_damage << " damage from the monster" << endl; //player blocked attack
-            cout << P_name << "'s remaining health: " << player.getHealth() << endl;
+            cout << endl << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
         } else {
             player.takeDamage(M_damage * 2);
             cout << P_name << " received " << M_damage * 2 << " damage from the monster" << endl; //failed to block so takes double damage
-            cout << P_name << "'s remaining health: " << player.getHealth() << endl;
+            cout << endl << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
         }
         
     }

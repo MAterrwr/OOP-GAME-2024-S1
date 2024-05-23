@@ -6,15 +6,13 @@ Mage::Mage() {
     health = 100; //set defualt health damage defense inventory and skill
     damage = 20;
     defense = 11;
-    inventorySize = 10;
     skill = 0;
 }
 
-Mage::Mage(int health, int damage, int defense, int inventorySize, int skill) {
+Mage::Mage(int health, int damage, int defense, int skill) {
     this->health = health; //set health damage defense inventory and skill
     this->damage = damage;
     this->defense = defense;
-    this->inventorySize = inventorySize;
     this->skill = skill;
 }
 

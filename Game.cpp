@@ -63,11 +63,29 @@ void Game::play(Player& player, Monster& monster) {
             break;
 
         case 3:
-            cout << "You chose to check your inventory.\n";
-            // Code to perform inventory action
-            player.setInventorySize(1); // set the inventory size to 1
-            player.getInventorySize();
-            break;
+        cout << "You chose to check your inventory.\n";
+                // Code to perform inventory action
+                if (player.getInventory().printInventory() > 0) {
+                // After displaying inventory, player may choose to use a health potion
+                cout << "Use health potion? (y/n): ";
+                char usePotion;
+                cin >> usePotion;
+                    if (usePotion == 'y') {
+                        // Code to use health potion
+                        cout << "Using health potion...\n";
+                        int currentHealth = player.getHealth();
+                        int newHealth = currentHealth + 25;
+                        player.setHealth(newHealth); //create a new health after the health potion is used
+                        player.getInventory().decreaseHealthPotionCount();
+                        cout << "Player used a health potion. Health increased by 25." << endl;
+                        cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
+                    }
+                } else {
+                    cout << "No health potions available, use another option \n" << endl;
+                    continue; //return to start of loop
+                }
+
+                break;
 
         case 4:
             cout << "You chose to use your special ability.\n";
@@ -98,8 +116,6 @@ void Game::play(Player& player, Monster& monster) {
             cout << "Player's remaining health: " << player.getHealth() << endl;
         }
         
-
-
     }
 
     if (player.isAlive()) { //print the outcome of the game

@@ -7,6 +7,7 @@
 #include "Mage.h"
 #include "Knight.h"
 #include "Archer.h"
+#include "Inventory.h"
 #include <iostream>
 #include <string>
 #include <cstdlib> 

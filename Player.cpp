@@ -2,26 +2,21 @@
 
 using namespace std;
 
-Player::Player() : Entity(), inventory(nullptr), inventorySize(0)
-{ //initialise default values
-    inventorySize = 0;
-    skill = 0;
-}
+Player::Player() : Entity(), inventory(new Inventory()) {}
 
-Player::Player(int health, int damage, int defense, int inventorySize, int skill) : Entity(health, damage, defense)
-{ //initialise with provided values
-    this->inventorySize = inventorySize;
-    this->skill = skill;    
+Player::Player(int health, int damage, int defense, int skill) : Entity(health, damage, defense), inventory(new Inventory()), skill(skill) {}
+
+Player::~Player() {
+    delete inventory; // Free the memory allocated for the inventory
 }
 
 void Player::setInventorySize(int size) {
-    delete[] inventory; // delete old inventory
-    inventory = new int[size]; // create new inventory with given size
-    inventorySize = size; // set inventory size
+    delete inventory; // delete old inventory
+    inventory = new Inventory[size]; // create new inventory with given size
 }
 
 int Player::getInventorySize() {
-    return inventorySize;
+    return inventory->getItemCount();
 }
 
 void Player::takeDamage(int Damage) {
@@ -30,19 +25,15 @@ void Player::takeDamage(int Damage) {
     if (actualDamage < 0) {
         actualDamage = 0; //ensure damage is not negative
     }
-    health -= actualDamage;  //reduce health
+    health -= actualDamage;
 
     if (health < 0) {
-        health = 0; //ensure health does not go below zero
+        health = 0;
     }
 }
 
 bool Player::isAlive(){
-    if (health > 0) {
-        return true; //player is alive if health is greater than 0
-    } else {
-            return false;
-        }
+    return health > 0; //determine if player is alive
 }
 
 int Player::getSkill() {
@@ -53,9 +44,10 @@ void Player::setSkill(int skill) {
     this->skill = skill;
 }
 
+Inventory& Player::getInventory() {
+    return *inventory; //get inventory and return
+}
+
 void Player::print() {
     cout << "Creating player ..." << endl;
 }
-
-
-

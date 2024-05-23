@@ -6,15 +6,13 @@ Archer::Archer() { //default constructor with stats
     health = 100;
     damage = 40;
     defense = 9;
-    inventorySize = 10;
     skill = 0;
 }
 
-Archer::Archer(int health, int damage, int defense, int inventorySize, int skill) { //constructor to set stats
+Archer::Archer(int health, int damage, int defense, int skill) { //constructor to set stats
     this->health = health;
     this->damage = damage;
     this->defense = defense;
-    this->inventorySize = inventorySize;
     this->skill = skill;
 }
 

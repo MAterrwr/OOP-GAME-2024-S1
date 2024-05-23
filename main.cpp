@@ -7,12 +7,13 @@
 #include "Inventory.h"
 #include "Knight.h"
 
+//main function for the game to run
 int main (){
-    Player player(100, 30, 5, 10, 5);
+    Player player(100, 30, 5, 5); //setting the stats for player and monster
     player.print();
     Monster monster(70, 10, 5, 1);
     monster.print();
-    Game game;
+    Game game; //run game
     game.play(player, monster);
     return 0;
 }

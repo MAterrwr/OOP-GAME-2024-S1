@@ -1,30 +1,26 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
-#include <string>
 #include <iostream>
-#include "Entity.h"
-#include "Player.h"
+#include <string>
 
-using namespace std;
-
-//inventory class inheriting from player class
-class Inventory : public Player {
+class Inventory {
 private:
-    int max_items; //create a max items integer
-    string* item_names; //dynamically allocate array for item name
-    int* item_quantities; //dynamically allocate array for item quantities
-    int item_count; //creates integer for current count of items
-    string trophy; //trophy awarded to the player
+    std::string* items; // Dynamic array for items
+    int itemCount; // Number of items in the inventory
+    int capacity; // Capacity of the inventory
+    int healthPotionCount;
 
 public:
-    Inventory(); //default constructor
-    ~Inventory(); //default destructor
- 
-    void use_item(string& item_name); //uses an item from the inventory
-    void print_inventory(); //prints the current inventory
-    void set_trophy(string& trophy_name); //sets the trophy name
-    string get_trophy(); //gets the trophy name
+    Inventory(); // Constructor
+    ~Inventory(); // Destructor
+    void addItem(std::string item); // Add an item to the inventory
+    void removeItem(std::string item); // Remove an item from the inventory
+    void useHealthPotion(int& playerhealth); // Use a health potion
+    int printInventory(); // Print the inventory items
+    int getItemCount(); // Get the number of items in the inventory
+    int getHealthPotionCount(); //get health potion count
+    void decreaseHealthPotionCount(); //decrease the health potion count
 };
 
-#endif 
+#endif

@@ -9,7 +9,7 @@
 class Archer : public Player {
 public:
     Archer(); //default constructor
-    Archer(int health, int damage, int defense, int inventorySize, int skill); //constructor
+    Archer(int health, int damage, int defense, int skill); //constructor
     int specialAttackArcher(); //unfinished //special ability for archer
 
     void print(); //print archer details

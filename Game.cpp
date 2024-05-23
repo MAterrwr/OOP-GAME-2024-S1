@@ -79,6 +79,9 @@ void Game::play(Player& player, Monster& monster) {
                         player.getInventory().decreaseHealthPotionCount();
                         cout << "Player used a health potion. Health increased by 25." << endl;
                         cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
+                    } else {
+                        cout << "please enter y or n. \n" << endl;
+                        continue;
                     }
                 } else {
                     cout << "No health potions available, use another option \n" << endl;

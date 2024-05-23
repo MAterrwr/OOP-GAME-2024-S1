@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include <string>
+using namespace std;
 
 class Inventory {
 private:
-    std::string* items; // Dynamic array for items
+    string* items; // Dynamic array for items
     int itemCount; // Number of items in the inventory
     int capacity; // Capacity of the inventory
     int healthPotionCount;
@@ -14,8 +15,8 @@ private:
 public:
     Inventory(); // Constructor
     ~Inventory(); // Destructor
-    void addItem(std::string item); // Add an item to the inventory
-    void removeItem(std::string item); // Remove an item from the inventory
+    void addItem(string item); // Add an item to the inventory
+    void removeItem(string item); // Remove an item from the inventory
     void useHealthPotion(int& playerhealth); // Use a health potion
     int printInventory(); // Print the inventory items
     int getItemCount(); // Get the number of items in the inventory

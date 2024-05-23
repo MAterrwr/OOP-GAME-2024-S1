@@ -2,7 +2,7 @@
 
 // Constructor
 Inventory::Inventory() : items(nullptr), itemCount(0), capacity(10), healthPotionCount(1) {
-    items = new std::string[capacity]; // Allocate memory for items array
+    items = new string[capacity]; // Allocate memory for items array
     // Add default items
     addItem("Health Potion");
     addItem("Skill Potion");
@@ -14,11 +14,11 @@ Inventory::~Inventory() {
 }
 
 // Add an item to the inventory
-void Inventory::addItem(std::string item) {
+void Inventory::addItem(string item) {
     if (itemCount < capacity) {
         items[itemCount++] = item; // Add item to the array and increment count
     } else {
-        std::cout << "Inventory is full!" << std::endl;
+        cout << "Inventory is full!" << endl;
     }
 }
 
@@ -42,17 +42,17 @@ void Inventory::useHealthPotion(int& playerHealth) {
     if (healthPotionCount > 0) {
         playerHealth += 25; // Increase player's health by 50
         --healthPotionCount; // Decrease health potion count
-        std::cout << "Used a health potion. Player's health increased by 50." << std::endl;
+        cout << "Used a health potion. Player's health increased by 50." << endl;
     } else {
-        std::cout << "No health potion available!" << std::endl;
+        cout << "No health potion available!" << endl;
     }
 }
 
 // Print the inventory items
 int Inventory::printInventory() {
-    std::cout << "Inventory:" << std::endl;
+    cout << "Inventory:" << endl;
     for (int i = 0; i < itemCount; ++i) {
-        std::cout << items[i] << std::endl;
+        cout << items[i] << endl;
     }
     return healthPotionCount;
 }

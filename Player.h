@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Entity.h"
 #include "Inventory.h"
+using namespace std;
 
 //player class inherting from entity
 class Player : public Entity {

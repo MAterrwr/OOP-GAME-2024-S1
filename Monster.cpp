@@ -15,6 +15,7 @@ Monster::Monster(int health, int damage, int defense, int level) {
     this->damage = damage * level;
     this->defense = defense * level;
     this->level = level;
+    print();
 }
 
 void Monster::takeDamage(int Damage) {

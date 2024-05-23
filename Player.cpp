@@ -33,8 +33,13 @@ void Player::takeDamage(int Damage) {
 }
 
 bool Player::isAlive(){
-    return health > 0; //determine if player is alive
-}
+    if (health > 0) {
+        return true; //determine if the player is alive
+    } else {
+        return false; 
+    }
+} 
+
 
 int Player::getSkill_meter() { //getter for skill meter
     return skill_meter;

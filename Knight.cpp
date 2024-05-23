@@ -5,7 +5,7 @@ using namespace std;
 Knight::Knight() {
     name = "Knight";
     health = 125; //set default stats
-    damage = 30;
+    damage = 15;
     defense = 14;
     skill_meter = 0;
     print();

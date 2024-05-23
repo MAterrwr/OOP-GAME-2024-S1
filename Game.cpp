@@ -32,7 +32,7 @@ void Game::startGame() {
             player->setPlayerClass("Archer");
             createClass = true;
         } else {
-            cout << "Invalid class. Please try to type according to the box above." << endl;
+            cout << "Invalid class. Please try to type accordingly to the box above." << endl;
             cin.clear(); // Clear the error flag
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
@@ -42,7 +42,7 @@ void Game::startGame() {
     cout << "\nBefore we start, would you like to familiarise yourself with rules? [Yes/No]" << endl;
     cin >> rules;
 
-    if (rules == "Yes" || "yes") {
+    if (rules == "Yes" || rules == "yes") {
         cout << "\nIn Epic Quest, your journey will take you through treacherous landscapes, from dense forests to dark dungeons and haunted ruins." << endl;
         cout << "You will encounter a variety of monsters, each with unique strengths and weaknesses. Combat will test your strategic thinking and quick reflexes as you decide the best course of action:" << endl;
         cout << "\nAttack: Strike your enemy with your weapon or spells." << endl;
@@ -68,22 +68,22 @@ void Game::startGame() {
         } else {
             switch (monsterLevel) {
                 case 1:
-                    level = 1;
-                    createMonster = true;
-                    break;
-
-                case 2:
                     level = 1.25;
                     createMonster = true;
                     break;
 
-                case 3:
+                case 2:
                     level = 1.5;
                     createMonster = true;
                     break;
 
-                case 4:
+                case 3:
                     level = 1.75;
+                    createMonster = true;
+                    break;
+
+                case 4:
+                    level = 2.00;
                     createMonster = true;
                     break;
             }
@@ -188,6 +188,7 @@ void Game::play(Player& player, Monster& monster) {
                         if (player.getInventory().getHealthPotionCount() > 0) {
                             cout << "Using health potion...\n";
                             player.getInventory().useHealthPotion(player.getHealth(), player.getMaxHealth());
+                            player.setHealth(player.getHealth() + 50);
                             cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
 
                         } else { //display if no health potions available
@@ -270,19 +271,26 @@ void Game::play(Player& player, Monster& monster) {
             break; //monsters attack
         }
 
-        if (P_block) {
-            player.takeDamage(M_damage);
-            cout << P_name << " received " << M_damage << " damage from the monster" << endl; //player blocked attack
+        if (userAction == 2) {
+            if (P_block) {
+            player.takeDamage(0);
+            cout << P_name << " received 0 damage from the monster" << endl; //player blocked attack
             cout << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
 
-        } else {
-            player.takeDamage(M_damage * 2);
-            cout << P_name << " received " << M_damage * 2 << " damage from the monster" << endl; //failed to block so takes double damage
+            } else {
+            int failBlockDmg = M_damage * 2;
+            player.takeDamage(failBlockDmg);
+            cout << P_name << " received " << failBlockDmg << " damage from the monster" << endl; //failed to block so takes double damage
             cout << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
 
-        }
+            } 
+            } else {
+                player.takeDamage(M_damage);
+                cout << P_name << " received " << M_damage <<  " from the monster" << endl; //player blocked attack
+                cout << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
+            }
         
-    }
+        }
 
     if (player.isAlive()) { //print the outcome of the game
         cout << "\nPlayer wins!" << endl;

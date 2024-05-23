@@ -54,12 +54,12 @@ void Inventory::useSkillPotion(int playerSkill, int maxSkill) {
 // Use a health potion
 void Inventory::useHealthPotion(int playerHealth, int maxHealth) {
     if (healthPotionCount > 0) {
-        playerHealth += 25; //increase player's health by 25
+        playerHealth += 50; //increase player's health by 50
         if (playerHealth > maxHealth) {
             playerHealth = maxHealth;
         }
         --healthPotionCount; //decrease health potion count
-        cout << "Used a health potion. Player's health increased by 25." << endl;
+        cout << "Used a health potion. Player's health increased by 50." << endl;
     } else {
         cout << "No health potion available!" << endl;
     }

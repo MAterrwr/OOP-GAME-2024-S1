@@ -184,13 +184,12 @@ void Game::play(Player& player, Monster& monster) {
                         if (player.getInventory().getHealthPotionCount() > 0) {
                             cout << "Using health potion...\n";
                             player.getInventory().useHealthPotion(player.getHealth(), player.getMaxHealth());
-                            player.setHealth(player.getHealth() + 50);
                             cout << "New health: " << player.getHealth() << "\n" << endl; //display new health
-
                         } else { //display if no health potions available
                             cout << "No health potions available." << endl;
                             continue;
                         }
+
                     } else if (usePotion == 's') {
                         if (player.getInventory().getSkillPotionCount() > 0) { 
                             cout << "Using skill potion... \n" << endl;

@@ -60,7 +60,7 @@ class UnitTest{
         Archer archer; //initialise with default constructor
         assert(archer.getHealth() == 100); //check if stats initialised correctly
         assert(archer.getDamage() == 24);
-        assert(archer.getDefense() == 4);
+        assert(archer.getDefense() == 6);
         assert(archer.getSkill_meter() == 0);
         cout << "Archer tests passed\n" << endl; //print if test passed
     }

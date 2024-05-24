@@ -31,6 +31,7 @@ public:
 
     int getInventorySize(); //getter for inventory size
     void setInventorySize(int inventorySize); //setter for inventory size
+    int& getHealth(); // Getter for health
     
     int getSkill_meter(); //getter for skill meter
     void setSkill_meter(int skill); //setter for skill meter

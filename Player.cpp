@@ -75,3 +75,7 @@ void Player::print() { //print output once constructor successfully initialised
 int Player::getMaxHealth() {return 0;}
 
 int Player::getMaxSkill() {return 0;}
+
+int& Player::getHealth() {
+    return health;
+}

@@ -6,7 +6,7 @@ Archer::Archer() { //default constructor with stats
     name = "Archer";
     health = 100;
     damage = 24;
-    defense = 4;
+    defense = 6;
     skill_meter = 0;
     print();
 }

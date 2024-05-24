@@ -21,7 +21,7 @@ public:
     void removeItem(string item); //remove an item from the inventory
 
     void useSkillPotion(int playerSkill, int maxSkill);
-    void useHealthPotion(int playerhealth, int maxHealth); //use a health potion
+    void useHealthPotion(int& playerhealth, int maxHealth); //use a health potion
     int printInventory(); //print the inventory items
     
     int getItemCount(); // Get the number of items in the inventory

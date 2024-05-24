@@ -235,7 +235,7 @@ void Game::play(Player& player, Monster& monster) {
                 } else if (player.getPlayerClass() == "Archer") {
                     cout << "Archer uses skill and shoots a flaming arrow!" << endl;
                     player.setSkill_meter(0); //reset skill bar to 0
-                    monster.takeDamage(P_damage + 10); //attack damage increse by 10 for the turn
+                    monster.takeDamage(P_damage + 15); //attack damage increse by 10 for the turn
                     cout << "Archer deals " << P_damage + 10 << " damage!" << endl;
                     cout << "Monster's remaining health: " << monster.getHealth() << endl << endl;
                 }

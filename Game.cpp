@@ -270,6 +270,7 @@ void Game::play(Player& player, Monster& monster) {
             break; //monsters attack
         }
 
+        int actualDmg = 0;
         if (userAction == 2) {
             if (P_block) {
             player.takeDamage(0);
@@ -277,15 +278,17 @@ void Game::play(Player& player, Monster& monster) {
             cout << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
 
             } else {
-            int failBlockDmg = M_damage * 2;
-            player.takeDamage(failBlockDmg);
-            cout << P_name << " received " << failBlockDmg << " damage from the monster" << endl; //failed to block so takes double damage
+            int failBlockDmg = M_damage * 1.25;
+            actualDmg = failBlockDmg - player.getDefense();
+            player.takeDamage(failBlockDmg);   
+            cout << P_name << " received " << actualDmg << " damage from the monster" << endl; //failed to block so takes double damage
             cout << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
 
             } 
             } else {
+                actualDmg = M_damage - player.getDefense();
                 player.takeDamage(M_damage);
-                cout << P_name << " received " << M_damage <<  " from the monster" << endl; //player blocked attack
+                cout << P_name << " received " << actualDmg <<  " from the monster" << endl; //player blocked attack
                 cout << P_name << "'s remaining health: " << player.getHealth() << endl << endl;
             }
         

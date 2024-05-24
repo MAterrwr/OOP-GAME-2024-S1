@@ -57,10 +57,10 @@ void Game::startGame() {
 
     while (!createMonster) {
         int monsterLevel;
-        cout << "Enter the monster level (1-4): ";
+        cout << "Enter the monster level (1 for easy, 2 for medium, 3 for hard): ";
         cin >> monsterLevel;
 
-        if (monsterLevel < 1 || monsterLevel > 4) {
+        if (monsterLevel < 1 || monsterLevel > 3) {
             cout << "Invalid level. Please try again." << endl;
             cin.clear(); // Clear the error flag
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -68,24 +68,20 @@ void Game::startGame() {
         } else {
             switch (monsterLevel) {
                 case 1:
-                    level = 1.25;
+                    level = 1.5;
                     createMonster = true;
                     break;
-
+                    
                 case 2:
-                    level = 1.5;
+                    level = 2;
                     createMonster = true;
                     break;
 
                 case 3:
-                    level = 1.75;
+                    level = 2.5;
                     createMonster = true;
                     break;
 
-                case 4:
-                    level = 2.00;
-                    createMonster = true;
-                    break;
             }
         }
     }
@@ -224,8 +220,8 @@ void Game::play(Player& player, Monster& monster) {
             // Code to perform special ability action and display what happens
             if (player.getSkill_meter() == 100 || player.getSkill_meter() > 100) {
                 if (player.getPlayerClass() == "Knight") {
-                    cout << "Knight uses fire sword skill and attacks for double damage! " << endl;
-                    monster.takeDamage(P_damage * 2); //double attack damage and attack monster
+                    cout << "Knight uses fire sword skill and attacks for triple damage! " << endl;
+                    monster.takeDamage(P_damage * 3); //double attack damage and attack monster
                     player.setSkill_meter(0); //reset skill bar to 0
                     cout << "Knight deals " << P_damage * 2 << " damage!" << endl;
                     cout << "Monster's remaining health: " << monster.getHealth() << endl << endl;

@@ -5,8 +5,8 @@ using namespace std;
 Archer::Archer() { //default constructor with stats
     name = "Archer";
     health = 100;
-    damage = 16;
-    defense = 9;
+    damage = 24;
+    defense = 4;
     skill_meter = 0;
     print();
 }

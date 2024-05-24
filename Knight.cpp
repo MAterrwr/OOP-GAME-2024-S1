@@ -6,7 +6,7 @@ Knight::Knight() {
     name = "Knight";
     health = 125; //set default stats
     damage = 15;
-    defense = 14;
+    defense = 6;
     skill_meter = 0;
     print();
 }

@@ -5,8 +5,8 @@ using namespace std;
 Mage::Mage() {
     name = "Mage";
     health = 100; //set defualt health damage defense inventory and skill
-    damage = 18;
-    defense = 11;
+    damage = 20;
+    defense = 5;
     skill_meter = 0;
     print();
 }

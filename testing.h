@@ -42,7 +42,7 @@ class UnitTest{
         Knight knight; //initialise with default constructor
         assert(knight.getHealth() == 125); //check if stats are initialised correctly
         assert(knight.getDamage() == 15);
-        assert(knight.getDefense() == 14);
+        assert(knight.getDefense() == 6);
         assert(knight.getSkill_meter() == 0);
         cout << "Knight tests passed\n" << endl; //print if test passed
     }
@@ -50,8 +50,8 @@ class UnitTest{
     void testMage(){ //test for mage
         Mage mage; //initialise with default constructor
         assert(mage.getHealth() == 100); //check if stats initialised correctly
-        assert(mage.getDamage() == 18);
-        assert(mage.getDefense() == 11);
+        assert(mage.getDamage() == 20);
+        assert(mage.getDefense() == 5);
         assert(mage.getSkill_meter() == 0);
         cout << "Mage tests passed\n" << endl; //print if test passed
     }
@@ -59,8 +59,8 @@ class UnitTest{
     void testArcher(){ //test for archer
         Archer archer; //initialise with default constructor
         assert(archer.getHealth() == 100); //check if stats initialised correctly
-        assert(archer.getDamage() == 16);
-        assert(archer.getDefense() == 9);
+        assert(archer.getDamage() == 24);
+        assert(archer.getDefense() == 4);
         assert(archer.getSkill_meter() == 0);
         cout << "Archer tests passed\n" << endl; //print if test passed
     }
